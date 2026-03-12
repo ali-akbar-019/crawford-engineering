@@ -26,7 +26,7 @@ const fadeUp = {
 export default function Home() {
     return (
         <motion.div
-            variants={pageVariants}
+            variants={pageVariants as any}
             initial="initial"
             animate="enter"
             exit="exit"
@@ -108,7 +108,7 @@ export default function Home() {
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true }}
-                                variants={fadeUp}
+                                variants={fadeUp as any}
                                 className="group bg-[#080808] p-7 flex flex-col gap-4 hover:bg-[#0f0f0f] transition-colors duration-300 cursor-default"
                             >
                                 {/* Index */}
@@ -219,7 +219,7 @@ export default function Home() {
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true }}
-                                variants={fadeUp}
+                                variants={fadeUp as any}
                                 className="group flex flex-col sm:flex-row sm:items-center justify-between gap-6 py-7 border-b border-[#1a1a1a] hover:border-[#beff00]/30 transition-colors duration-300"
                             >
                                 <div className="flex items-start gap-6">

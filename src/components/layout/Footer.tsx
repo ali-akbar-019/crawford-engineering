@@ -36,7 +36,7 @@ export default function Footer() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        variants={fadeUp}
+                        variants={fadeUp as any}
                         className="lg:col-span-1"
                     >
                         {/* Logo */}
@@ -75,7 +75,7 @@ export default function Footer() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        variants={fadeUp}
+                        variants={fadeUp as any}
                     >
                         <p
                             className="text-[#beff00] text-xs tracking-[0.25em] uppercase mb-5"
@@ -109,7 +109,7 @@ export default function Footer() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        variants={fadeUp}
+                        variants={fadeUp as any}
                     >
                         <p
                             className="text-[#beff00] text-xs tracking-[0.25em] uppercase mb-5"
@@ -143,7 +143,7 @@ export default function Footer() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        variants={fadeUp}
+                        variants={fadeUp as any}
                     >
                         <p
                             className="text-[#beff00] text-xs tracking-[0.25em] uppercase mb-5"

@@ -3,6 +3,7 @@
 @import "shadcn/tailwind.css";
 
 
+@custom-variant dark (&:is(.dark *));
 
 :root {
     /* ── Brand tokens ── */
@@ -136,7 +137,7 @@
         scroll-behavior: smooth;
         overflow-x: hidden;
         /* Force dark mode always */
-        @apply dark;
+        /* @apply dark; */
     }
 
     body {

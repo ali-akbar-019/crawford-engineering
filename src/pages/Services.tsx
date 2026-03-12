@@ -31,7 +31,7 @@ export default function Services() {
 
     return (
         <motion.div
-            variants={pageVariants}
+            variants={pageVariants as any}
             initial="initial"
             animate="enter"
             exit="exit"
