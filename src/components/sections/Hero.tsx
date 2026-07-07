@@ -5,6 +5,54 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 
+function ScrollVideo() {
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [isReady, setIsReady] = useState(false);
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        const tryPlay = async () => {
+            try {
+                await video.play();
+                setIsReady(true);
+            } catch {
+                setIsReady(true);
+            }
+        };
+
+        if (video.readyState >= 2) {
+            void tryPlay();
+        } else {
+            video.addEventListener("canplay", tryPlay, { once: true });
+        }
+
+        return () => video.removeEventListener("canplay", tryPlay);
+    }, []);
+
+    return (
+        <motion.div
+            animate={isReady ? { scale: [1, 1.02, 1] } : { scale: 1 }}
+            transition={{ duration: 12, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+            className="absolute inset-0 will-change-transform"
+        >
+            <video
+                ref={videoRef}
+                src="/videos/hero-bridge.mp4"
+                muted
+                autoPlay
+                loop
+                playsInline
+                preload="auto"
+                className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-[#0a0a0a]/70" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/40" />
+        </motion.div>
+    );
+}
+
 const TYPEWRITER_STRINGS = [
     "Future‑ready engineering.",
     "Transport infrastructure.",
@@ -49,15 +97,15 @@ function useTypewriter(strings: string[], speed = 60, pause = 1800) {
 
 export default function Hero() {
     const typed = useTypewriter(TYPEWRITER_STRINGS);
-    const containerRef = useRef<HTMLDivElement>(null);
 
     return (
-        <section
-            ref={containerRef}
-            className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-[#0a0a0a]"
-        >
+        <section className="relative min-h-[120vh] bg-[#0a0a0a] overflow-hidden">
+            <div className="sticky top-0 h-[120vh] min-h-[120vh] flex flex-col justify-between overflow-hidden">
+            {/* ── Hero video background ── */}
+            <ScrollVideo />
+
             {/* ── Grid background ── */}
-            <div className="absolute inset-0 grid-bg opacity-100 pointer-events-none" />
+            <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
 
             {/* ── Lime glow orb ── */}
             <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#beff00]/6 rounded-full blur-[120px] pointer-events-none" />
@@ -230,7 +278,7 @@ export default function Hero() {
                     </div>
                 </div>
             </motion.div>
-
+        </div>
         </section>
     );
 }

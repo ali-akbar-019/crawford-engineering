@@ -145,6 +145,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         overflow-x: hidden;
+        margin: 0;
     }
 
     /* All headings use Bebas Neue */
