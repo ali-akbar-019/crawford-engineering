@@ -510,6 +510,60 @@ export default function Contact() {
                 </div>
             </section>
 
+            {/* ── Global offices ── */}
+            <section className="relative bg-[#080808] border-t border-[#1a1a1a] py-20 overflow-hidden">
+                <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
+                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="flex items-center gap-3 mb-12"
+                    >
+                        <div className="w-8 h-[1px] bg-[#beff00]" />
+                        <span
+                            className="text-[#beff00] text-xs tracking-[0.3em] uppercase"
+                            style={{ fontFamily: "'DM Mono', monospace" }}
+                        >
+                            Global Offices
+                        </span>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[#1a1a1a]">
+                        {siteData.offices.map((office, i) => (
+                            <motion.div
+                                key={office.id}
+                                custom={i}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                variants={fadeUp as any}
+                                className="group bg-[#0a0a0a] p-8 flex flex-col gap-3 hover:bg-[#0d0d0d] transition-colors duration-300"
+                            >
+                                <span
+                                    className="text-[#333] text-xs tracking-widest group-hover:text-[#beff00] transition-colors duration-300"
+                                    style={{ fontFamily: "'DM Mono', monospace" }}
+                                >
+                                    0{i + 1}
+                                </span>
+                                <h3
+                                    className="text-white text-3xl leading-none group-hover:text-[#beff00] transition-colors duration-300"
+                                    style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+                                >
+                                    {office.country}
+                                </h3>
+                                <p
+                                    className="text-[#666] text-sm leading-relaxed"
+                                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                                >
+                                    {office.address}
+                                </p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* ── Bottom marquee ── */}
             <div className="bg-[#beff00] py-3 overflow-hidden">
                 <div className="flex whitespace-nowrap animate-[marquee_28s_linear_infinite]">

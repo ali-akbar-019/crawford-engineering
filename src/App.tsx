@@ -8,8 +8,11 @@ import Footer from "./components/layout/Footer";
 
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
 import Sectors from "./pages/Sectors";
 import Projects from "./pages/Projects";
+import ProjectDetail from "./pages/ProjectDetail";
+import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./utils/ScrollToTop";
 
@@ -22,8 +25,11 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services/:id" element={<ServiceDetail />} />
         <Route path="/sectors" element={<Sectors />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:id" element={<ProjectDetail />} />
+        <Route path="/team" element={<Team />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </AnimatePresence>

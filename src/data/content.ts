@@ -12,6 +12,7 @@ export const siteData: SiteData = {
         { label: "Services", path: "/services" },
         { label: "Sectors", path: "/sectors" },
         { label: "Projects", path: "/projects" },
+        { label: "Team", path: "/team" },
         { label: "Contact", path: "/contact" },
     ],
 
@@ -36,99 +37,276 @@ export const siteData: SiteData = {
             title: "Road Design",
             description:
                 "Geometric design for roads, intersections and corridor upgrades aligned with standards.",
+            longDescription:
+                "Our road design team delivers concept through to detailed geometric design for arterials, intersections and corridor upgrades. Every design is developed against current road authority standards, with a safety‑led approach that balances capacity, active transport and constructability from the earliest concept sketch through to issued‑for‑construction drawings.",
             tags: ["Concept", "Detailed", "Safety‑led design"],
             category: "infrastructure",
             icon: "RouteIcon",
+            image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1200&auto=format&fit=crop",
+            highlights: [
+                "Concept and detailed geometric design",
+                "Intersection and corridor staging plans",
+                "Standards‑compliant, safety‑led approach",
+            ],
+        },
+        {
+            id: "railway-design",
+            title: "Railway & Track Design",
+            description:
+                "Track geometry, corridor alignment and rail interface design for upgrades and new works.",
+            longDescription:
+                "We support rail corridor projects with track geometry, alignment design and interface coordination between road and rail assets. Our team works alongside transport authorities to deliver combined road‑and‑rail corridor solutions where level crossings, interchanges and shared infrastructure require close coordination between disciplines.",
+            tags: ["Track geometry", "Corridor alignment", "Interface design"],
+            category: "infrastructure",
+            icon: "TrainIcon",
+            image: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?q=80&w=1200&auto=format&fit=crop",
+            highlights: [
+                "Track geometry and alignment design",
+                "Road / rail interface coordination",
+                "Level crossing and interchange input",
+            ],
         },
         {
             id: "project-management",
             title: "Project Management",
             description:
                 "Planning, coordination and delivery management across feasibility to hand‑over.",
+            longDescription:
+                "From feasibility studies through to practical completion, our project management team keeps scope, time, cost and risk under control. We coordinate design consultants, contractors and stakeholders through a structured delivery framework, with transparent reporting so clients always know exactly where a project stands.",
             tags: ["Scope", "Time", "Cost", "Risk"],
             category: "infrastructure",
             icon: "ClipboardList",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
+            highlights: [
+                "Feasibility through to hand‑over",
+                "Stakeholder and contractor coordination",
+                "Transparent scope, cost and risk reporting",
+            ],
         },
         {
             id: "bim",
             title: "BIM",
             description:
                 "Model‑based coordination and documentation supporting buildability and asset data.",
+            longDescription:
+                "Our BIM services provide model‑based coordination across disciplines, clash detection and structured asset data capture. Models are developed to support buildability reviews during design and handed over as accurate digital records that continue to add value through the operational life of the asset.",
             tags: ["3D models", "Coordination", "Asset data"],
             category: "infrastructure",
             icon: "Box",
+            image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop",
+            highlights: [
+                "Multi‑discipline model coordination",
+                "Clash detection and buildability review",
+                "Structured asset data handover",
+            ],
         },
         {
             id: "cost-estimation",
             title: "Cost Estimation",
             description:
                 "Order‑of‑magnitude to detailed estimates for options, business cases and procurement.",
+            longDescription:
+                "We prepare cost estimates ranging from early order‑of‑magnitude figures for options analysis through to detailed, procurement‑ready estimates. Estimates include CAPEX and OPEX allowances, risk contingency and clear assumptions, giving clients confidence in the numbers behind every business case.",
             tags: ["CAPEX", "OPEX", "Risk allowances"],
             category: "infrastructure",
             icon: "Calculator",
+            image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop",
+            highlights: [
+                "Order‑of‑magnitude to detailed estimates",
+                "CAPEX / OPEX and contingency allowances",
+                "Procurement‑ready cost documentation",
+            ],
         },
         {
             id: "commissioning",
             title: "Commissioning & Decommissioning",
             description:
                 "Plans, utilities checks, functional testing and coordinated shutdowns for lab equipment and test rigs.",
+            longDescription:
+                "Our commissioning team plans and executes utilities checks, functional testing and coordinated shutdowns for laboratory equipment and test rigs. Every commissioning plan covers mechanical, electrical and controls interfaces, minimising downtime and keeping staff and students safe throughout the process.",
             tags: ["Mechanical", "Electrical", "Controls interfaces"],
             category: "laboratory",
             icon: "Zap",
+            image: "https://images.unsplash.com/photo-1581091012184-7e0cdfbb6797?q=80&w=1200&auto=format&fit=crop",
+            highlights: [
+                "Utilities checks and functional testing",
+                "Coordinated shutdown planning",
+                "Mechanical, electrical and controls scope",
+            ],
         },
         {
             id: "technical-reports",
             title: "Technical Reports & Documentation",
             description:
                 "Reports capturing test setups, acceptance criteria, results and as‑installed configuration.",
+            longDescription:
+                "We produce technical reports and documentation that capture test setups, acceptance criteria and results in full detail. As‑installed configurations are recorded accurately, giving facilities teams a reliable reference long after a project has been handed over.",
             tags: ["Test plans", "Acceptance reports", "As‑built records"],
             category: "laboratory",
             icon: "FileText",
+            image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
+            highlights: [
+                "Test plans and acceptance criteria",
+                "Detailed results reporting",
+                "Accurate as‑installed records",
+            ],
         },
         {
             id: "sops",
             title: "SOPs & Work Instructions",
             description:
                 "Clear SOPs for complex equipment and control systems for staff and students.",
+            longDescription:
+                "Our team writes clear, practical SOPs and work instructions for complex equipment and control systems used by staff and students. Every document is written to be understood and followed correctly under normal operating conditions and during startup, shutdown and maintenance routines.",
             tags: ["Startup", "Shutdown", "Maintenance routines"],
             category: "laboratory",
             icon: "BookOpen",
+            image: "https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?q=80&w=1200&auto=format&fit=crop",
+            highlights: [
+                "Startup and shutdown procedures",
+                "Maintenance routine documentation",
+                "Written for staff and student use",
+            ],
         },
         {
             id: "risk-analysis",
             title: "Risk Analysis Documents",
             description:
                 "Risk assessments and controls for lab equipment and experiments aligned to HSW frameworks.",
+            longDescription:
+                "We prepare risk assessments and control documentation for laboratory equipment and experiments, aligned to health, safety and wellbeing frameworks. Risk registers, hazard controls and safe operating limits are documented clearly so risks are understood and managed before work begins.",
             tags: ["Risk registers", "Hazard controls", "Safe operating limits"],
             category: "laboratory",
             icon: "ShieldAlert",
+            image: "https://images.unsplash.com/photo-1581093458791-9f3113b8e8b3?q=80&w=1200&auto=format&fit=crop",
+            highlights: [
+                "Risk registers and hazard controls",
+                "Safe operating limits documentation",
+                "Aligned to HSW frameworks",
+            ],
         },
     ],
 
     projects: [
         {
-            id: "urban-corridor",
-            title: "Urban Corridor Upgrade",
+            id: "m1-pacific-motorway",
+            title: "M1 Pacific Motorway Upgrade",
             description:
-                "Road design and staging for an urban arterial, integrating bus priority and active transport.",
+                "Road design and staging for a major arterial upgrade, integrating bus priority lanes and active transport crossings.",
+            longDescription:
+                "This project delivers a staged upgrade of a major arterial motorway corridor, adding dedicated bus priority lanes and new active transport crossings. Our team is responsible for the geometric design and construction staging plan, working closely with the road authority to minimise disruption to live traffic while the corridor is progressively widened and reconfigured.",
             tags: ["Road design", "BIM"],
             sector: "Transport & Urban",
+            status: "in-progress",
+            location: "Palmview, QLD",
+            image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop",
+            images: [
+                "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1502489597346-dad15683d4c2?q=80&w=1200&auto=format&fit=crop",
+            ],
+            timeline: ["Concept & Feasibility", "Detailed Design", "Construction / Delivery", "Handover & Closeout"],
+            currentStage: 2,
         },
         {
             id: "interchange-redevelopment",
             title: "Interchange Redevelopment",
             description:
-                "Project management and BIM coordination for a multi‑modal interchange upgrade.",
+                "Project management and BIM coordination for a multi‑modal interchange upgrade connecting rail and bus networks.",
+            longDescription:
+                "A multi‑modal interchange linking rail and bus networks is being redeveloped to improve passenger flow and accessibility. We are providing project management and BIM coordination across the design consultant team, tracking scope, program and cost while resolving clashes between structural, services and architectural models before construction begins.",
             tags: ["Project management", "BIM"],
             sector: "Transport & Urban",
+            status: "in-progress",
+            location: "Brisbane, QLD",
+            image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=1200&auto=format&fit=crop",
+            images: [
+                "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1474487548417-781cb71495f3?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop",
+            ],
+            timeline: ["Concept & Feasibility", "Detailed Design", "Construction / Delivery", "Handover & Closeout"],
+            currentStage: 1,
         },
         {
             id: "lab-upgrade",
             title: "Engineering Lab Upgrade",
             description:
                 "Commissioning support and documentation for refurbished lab equipment, including SOPs and risk analysis.",
+            longDescription:
+                "Following a full refurbishment of a university engineering lab, our team delivered commissioning support for newly installed test equipment along with the SOPs and risk analysis documentation staff and students now rely on day to day. The project closed out with a full set of as‑installed records handed over to the facilities team.",
             tags: ["Commissioning", "SOPs", "Risk analysis"],
             sector: "Campuses & Facilities",
+            status: "completed",
+            location: "Melbourne, VIC",
+            image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200&auto=format&fit=crop",
+            images: [
+                "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1581091012184-7e0cdfbb6797?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?q=80&w=1200&auto=format&fit=crop",
+            ],
+            timeline: ["Concept & Feasibility", "Detailed Design", "Construction / Delivery", "Handover & Closeout"],
+            currentStage: 3,
+        },
+        {
+            id: "urban-corridor",
+            title: "Urban Corridor Upgrade",
+            description:
+                "Geometric design and staging plan for an urban arterial corridor, balancing capacity with pedestrian safety.",
+            longDescription:
+                "This urban arterial corridor upgrade required a careful balance between vehicle capacity and pedestrian safety through a dense town centre. Our geometric design and staging plan sequenced the works around existing businesses and bus routes, and the project reached practical completion with strong safety outcomes for the local community.",
+            tags: ["Road design", "Safety‑led design"],
+            sector: "Transport & Urban",
+            status: "completed",
+            location: "Sydney, NSW",
+            image: "https://images.unsplash.com/photo-1502489597346-dad15683d4c2?q=80&w=1200&auto=format&fit=crop",
+            images: [
+                "https://images.unsplash.com/photo-1502489597346-dad15683d4c2?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop",
+            ],
+            timeline: ["Concept & Feasibility", "Detailed Design", "Construction / Delivery", "Handover & Closeout"],
+            currentStage: 3,
+        },
+        {
+            id: "campus-utilities",
+            title: "Campus Utilities Renewal",
+            description:
+                "Coordinated shutdown planning and functional testing for campus energy and utilities infrastructure.",
+            longDescription:
+                "An ageing campus utilities network is being progressively renewed while the campus remains fully operational. We are planning coordinated shutdowns around teaching schedules and running functional testing on each new section before it goes live, keeping disruption to staff and students to an absolute minimum.",
+            tags: ["Commissioning", "Utilities"],
+            sector: "Campuses & Facilities",
+            status: "in-progress",
+            location: "Adelaide, SA",
+            image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop",
+            images: [
+                "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1581093458791-9f3113b8e8b3?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
+            ],
+            timeline: ["Concept & Feasibility", "Detailed Design", "Construction / Delivery", "Handover & Closeout"],
+            currentStage: 2,
+        },
+        {
+            id: "precinct-active-transport",
+            title: "Precinct Active Transport Network",
+            description:
+                "Concept‑to‑detailed design for a connected cycling and pedestrian network across a growth precinct.",
+            longDescription:
+                "A fast‑growing urban precinct needed a connected network of cycling and pedestrian paths linking new residential areas to transit and town centre amenities. We carried the project from initial concept sketches through to detailed design, and the completed network now forms the backbone of active transport in the precinct.",
+            tags: ["Concept", "Active transport"],
+            sector: "Transport & Urban",
+            status: "completed",
+            location: "Perth, WA",
+            image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1200&auto=format&fit=crop",
+            images: [
+                "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1502489597346-dad15683d4c2?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=1200&auto=format&fit=crop",
+            ],
+            timeline: ["Concept & Feasibility", "Detailed Design", "Construction / Delivery", "Handover & Closeout"],
+            currentStage: 3,
         },
     ],
 
@@ -157,9 +335,44 @@ export const siteData: SiteData = {
         },
     ],
 
+    team: [
+        {
+            id: "waqar",
+            name: "Waqar Ahmed",
+            role: "Chief Executive Officer",
+            bio: "Waqar leads Crawford Engineering's overall strategy and client relationships, drawing on years of delivery experience across transport and infrastructure programs.",
+            photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop",
+        },
+        {
+            id: "umair",
+            name: "Umair Khan",
+            role: "Director of Engineering",
+            bio: "Umair oversees technical delivery across the practice, ensuring every design, report and commissioning plan meets the standard Crawford Engineering is built on.",
+            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
+        },
+    ],
+
+    offices: [
+        {
+            id: "australia",
+            country: "Australia",
+            address: "Level 1, Example Street, Brisbane QLD 4000",
+        },
+        {
+            id: "qatar",
+            country: "Qatar",
+            address: "West Bay, Doha, Qatar",
+        },
+        {
+            id: "dubai",
+            country: "United Arab Emirates",
+            address: "Business Bay, Dubai, UAE",
+        },
+    ],
+
     contact: {
         email: "info@crawfordengineering.com",
         phone: "+61 (0)4 00 000 000",
-        office: "Level 1, Example Street, Your City",
+        office: "Level 1, Example Street, Brisbane QLD 4000",
     },
 };

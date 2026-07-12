@@ -121,7 +121,7 @@ export default function Footer() {
                             {siteData.services.slice(0, 5).map((service) => (
                                 <li key={service.id}>
                                     <Link
-                                        to="/services"
+                                        to={`/services/${service.id}`}
                                         className="
                       group flex items-center gap-2
                       text-[#888] hover:text-white
