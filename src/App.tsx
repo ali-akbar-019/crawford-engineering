@@ -1,10 +1,12 @@
 // src/App.tsx
 
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import Preloader from "./components/Preloader";
 
 import Home from "./pages/Home";
 import Services from "./pages/Services";
@@ -41,9 +43,23 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
+  // Lock scroll while the preloader is up so the page can't scroll behind it
+  useEffect(() => {
+    document.body.style.overflow = loading ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [loading]);
+
   return (
     <BrowserRouter>
       <ScrollToTop />
+
+      <AnimatePresence>
+        {loading && <Preloader onFinish={() => setLoading(false)} />}
+      </AnimatePresence>
 
       <div className="relative min-h-screen flex flex-col bg-[#0a0a0a]">
         <Navbar />
