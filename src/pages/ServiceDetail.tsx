@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
 import { siteData } from "../data/content";
+import { useDocumentTitle } from "../utils/useDocumentTitle";
 
 const pageVariants = {
     initial: { opacity: 0, y: 20 },
@@ -23,6 +24,11 @@ const fadeUp = {
 export default function ServiceDetail() {
     const { id } = useParams<{ id: string }>();
     const service = siteData.services.find((s) => s.id === id);
+
+    useDocumentTitle(
+        service?.title ?? "Service",
+        service?.description ?? "Crawford Engineering service."
+    );
 
     if (!service) {
         return <Navigate to="/services" replace />;

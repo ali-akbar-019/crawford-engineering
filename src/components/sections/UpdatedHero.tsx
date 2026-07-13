@@ -224,7 +224,7 @@ export default function UpdatedHero() {
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.6 }}
-                    className="flex items-center gap-2 mb-10 h-7"
+                    className="flex items-center gap-2 mb-10 min-h-[2rem] lg:min-h-[2.25rem]"
                 >
                     <span
                         className="text-white text-lg lg:text-xl tracking-wide"
@@ -317,7 +317,7 @@ export default function UpdatedHero() {
                                 className={`
                   py-6 flex flex-col gap-1
                   ${i !== STATS.length - 1 ? "border-r border-white/10" : ""}
-                  ${i < 2 ? "pr-6 lg:pr-0" : "pl-6 lg:pl-6"}
+                  ${i < 2 ? "pr-6 lg:pr-0" : "pl-6 lg:pl-0"}
                   lg:px-8 lg:first:pl-0
                 `}
                             >

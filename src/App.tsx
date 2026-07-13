@@ -13,7 +13,9 @@ import Sectors from "./pages/Sectors";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import Team from "./pages/Team";
+import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 import ScrollToTop from "./utils/ScrollToTop";
 
 // AnimatePresence needs access to location, so we wrap inside BrowserRouter
@@ -30,7 +32,9 @@ function AnimatedRoutes() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
   );

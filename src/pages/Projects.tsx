@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ProjectCard from "../components/sections/ProjectCard";
 import { siteData } from "../data/content";
-
+import { useDocumentTitle } from "../utils/useDocumentTitle";
 const pageVariants = {
     initial: { opacity: 0, y: 20 },
     enter: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
@@ -19,13 +19,26 @@ const SECTOR_FILTERS = [
     { label: "Campuses & Facilities", value: "Campuses & Facilities" },
 ];
 
+const STATUS_FILTERS = [
+    { label: "All Status", value: "all" },
+    { label: "In Progress", value: "in-progress" },
+    { label: "Completed", value: "completed" },
+];
+
 export default function Projects() {
+    useDocumentTitle(
+        "Projects",
+        "Representative infrastructure and laboratory projects delivered by Crawford Engineering."
+    );
     const [sector, setSector] = useState("all");
+    const [status, setStatus] = useState("all");
     const [view, setView] = useState<"grid" | "list">("list");
 
-    const filtered = siteData.projects.filter((p) =>
-        sector === "all" ? true : p.sector === sector
-    );
+    const filtered = siteData.projects.filter((p) => {
+        const sectorMatch = sector === "all" ? true : p.sector === sector;
+        const statusMatch = status === "all" ? true : p.status === status;
+        return sectorMatch && statusMatch;
+    });
 
     return (
         <motion.div
@@ -145,24 +158,44 @@ export default function Projects() {
                         transition={{ delay: 0.65, duration: 0.4 }}
                         className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-12"
                     >
-                        {/* Sector filters */}
-                        <div className="flex items-center gap-2 flex-wrap">
-                            {SECTOR_FILTERS.map((f) => (
-                                <button
-                                    key={f.value}
-                                    onClick={() => setSector(f.value)}
-                                    className={`
+                        {/* Sector + status filters */}
+                        <div className="flex flex-col gap-3">
+                            <div className="flex items-center gap-2 flex-wrap">
+                                {SECTOR_FILTERS.map((f) => (
+                                    <button
+                                        key={f.value}
+                                        onClick={() => setSector(f.value)}
+                                        className={`
                     px-4 py-1.5 text-xs tracking-[0.2em] uppercase border transition-all duration-200
                     ${sector === f.value
-                                            ? "bg-[#beff00] text-[#0a0a0a] border-[#beff00]"
-                                            : "bg-transparent text-[#666] border-[#222] hover:text-white hover:border-[#444]"
-                                        }
+                                                ? "bg-[#beff00] text-[#0a0a0a] border-[#beff00]"
+                                                : "bg-transparent text-[#666] border-[#222] hover:text-white hover:border-[#444]"
+                                            }
                   `}
-                                    style={{ fontFamily: "'DM Mono', monospace" }}
-                                >
-                                    {f.label}
-                                </button>
-                            ))}
+                                        style={{ fontFamily: "'DM Mono', monospace" }}
+                                    >
+                                        {f.label}
+                                    </button>
+                                ))}
+                            </div>
+                            <div className="flex items-center gap-2 flex-wrap">
+                                {STATUS_FILTERS.map((f) => (
+                                    <button
+                                        key={f.value}
+                                        onClick={() => setStatus(f.value)}
+                                        className={`
+                    px-3 py-1 text-[10px] tracking-[0.2em] uppercase border transition-all duration-200
+                    ${status === f.value
+                                                ? "border-[#beff00]/50 text-[#beff00] bg-[#beff00]/5"
+                                                : "bg-transparent text-[#555] border-[#1a1a1a] hover:text-[#999] hover:border-[#333]"
+                                            }
+                  `}
+                                        style={{ fontFamily: "'DM Mono', monospace" }}
+                                    >
+                                        {f.label}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
 
                         {/* View toggle + count */}
@@ -196,7 +229,7 @@ export default function Projects() {
                     {/* Projects */}
                     <AnimatePresence mode="wait">
                         <motion.div
-                            key={`${sector}-${view}`}
+                            key={`${sector}-${status}-${view}`}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -207,14 +240,25 @@ export default function Projects() {
                                     : "flex flex-col border-t border-[#1a1a1a]"
                             }
                         >
-                            {filtered.map((project, i) => (
-                                <ProjectCard
-                                    key={project.id}
-                                    project={project}
-                                    index={i}
-                                    view={view}
-                                />
-                            ))}
+                            {filtered.length > 0 ? (
+                                filtered.map((project, i) => (
+                                    <ProjectCard
+                                        key={project.id}
+                                        project={project}
+                                        index={i}
+                                        view={view}
+                                    />
+                                ))
+                            ) : (
+                                <div className="col-span-full py-20 text-center">
+                                    <p
+                                        className="text-[#555] text-sm"
+                                        style={{ fontFamily: "'DM Sans', sans-serif" }}
+                                    >
+                                        No projects match these filters. Try a different combination.
+                                    </p>
+                                </div>
+                            )}
                         </motion.div>
                     </AnimatePresence>
                 </div>

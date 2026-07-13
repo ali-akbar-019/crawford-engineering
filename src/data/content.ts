@@ -13,6 +13,7 @@ export const siteData: SiteData = {
         { label: "Sectors", path: "/sectors" },
         { label: "Projects", path: "/projects" },
         { label: "Team", path: "/team" },
+        { label: "Careers", path: "/careers" },
         { label: "Contact", path: "/contact" },
     ],
 
@@ -337,18 +338,39 @@ export const siteData: SiteData = {
 
     team: [
         {
-            id: "waqar",
-            name: "Waqar Ahmed",
+            id: "masood",
+            name: "Masood",
             role: "Chief Executive Officer",
-            bio: "Waqar leads Crawford Engineering's overall strategy and client relationships, drawing on years of delivery experience across transport and infrastructure programs.",
+            bio: "Masood leads Crawford Engineering's overall strategy and client relationships, drawing on years of delivery experience across transport and infrastructure programs.",
             photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop",
         },
         {
-            id: "umair",
-            name: "Umair Khan",
-            role: "Director of Engineering",
-            bio: "Umair oversees technical delivery across the practice, ensuring every design, report and commissioning plan meets the standard Crawford Engineering is built on.",
+            id: "waqar",
+            name: "Waqar",
+            role: "Co‑Founder",
+            bio: "Waqar co‑founded Crawford Engineering and oversees technical delivery across the practice, ensuring every design, report and commissioning plan meets the standard the firm is built on.",
             photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
+        },
+        {
+            id: "hassan",
+            name: "Hassan",
+            role: "Regional Manager, Australia",
+            bio: "Hassan leads project delivery across the Australian region, coordinating design teams and client relationships from feasibility through to hand‑over.",
+            photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop",
+        },
+        {
+            id: "adam-tahir",
+            name: "Adam Tahir",
+            role: "Regional Manager, Qatar",
+            bio: "Adam manages Crawford Engineering's Qatar operations, overseeing delivery for transport and infrastructure projects across the region.",
+            photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800&auto=format&fit=crop",
+        },
+        {
+            id: "alla-ismail",
+            name: "Alla Ismail",
+            role: "Regional Manager, UAE",
+            bio: "Alla oversees Crawford Engineering's presence in the UAE, working closely with regional clients to deliver projects on time and to standard.",
+            photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop",
         },
     ],
 
@@ -367,6 +389,63 @@ export const siteData: SiteData = {
             id: "dubai",
             country: "United Arab Emirates",
             address: "Business Bay, Dubai, UAE",
+        },
+    ],
+
+    jobOpenings: [
+        {
+            id: "road-design-engineer",
+            title: "Road Design Engineer",
+            type: "Full-time",
+            location: "Brisbane, QLD",
+            department: "Infrastructure",
+            description:
+                "Deliver geometric design and staging plans for road and corridor upgrade projects, working closely with senior engineers and road authorities.",
+        },
+        {
+            id: "project-coordinator",
+            title: "Project Coordinator",
+            type: "Full-time",
+            location: "Melbourne, VIC",
+            department: "Project Management",
+            description:
+                "Support project managers with scheduling, documentation and stakeholder coordination across transport and campus infrastructure projects.",
+        },
+        {
+            id: "bim-technician",
+            title: "BIM Technician",
+            type: "Contract",
+            location: "Remote (AUS)",
+            department: "Infrastructure",
+            description:
+                "Build and coordinate multi-discipline models, run clash detection and prepare asset data handovers for infrastructure projects.",
+        },
+    ],
+
+    testimonials: [
+        {
+            id: "t1",
+            quote:
+                "Crawford Engineering managed our interchange upgrade with a level of coordination we hadn't seen before. Every clash was caught in the model long before it became a site problem.",
+            author: "Project Director",
+            role: "Transport Authority Client",
+            company: "State Roads Agency",
+        },
+        {
+            id: "t2",
+            quote:
+                "The commissioning documentation for our lab refurbishment was thorough and easy for our facilities team to pick up. SOPs were written for the people who'd actually use them.",
+            author: "Facilities Manager",
+            role: "Higher Education Client",
+            company: "University Campus",
+        },
+        {
+            id: "t3",
+            quote:
+                "Clear reporting and a realistic program from day one. We always knew exactly where the project stood, which made our own stakeholder updates a lot easier.",
+            author: "Program Manager",
+            role: "Infrastructure Client",
+            company: "Regional Development Authority",
         },
     ],
 

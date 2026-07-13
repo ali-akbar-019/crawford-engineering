@@ -63,6 +63,23 @@ export interface Office {
     address: string;
 }
 
+export interface JobOpening {
+    id: string;
+    title: string;
+    type: string;
+    location: string;
+    department: string;
+    description: string;
+}
+
+export interface Testimonial {
+    id: string;
+    quote: string;
+    author: string;
+    role: string;
+    company: string;
+}
+
 export interface ContactInfo {
     email: string;
     phone: string;
@@ -80,5 +97,7 @@ export interface SiteData {
     sectors: Sector[];
     team: TeamMember[];
     offices: Office[];
+    jobOpenings: JobOpening[];
+    testimonials: Testimonial[];
     contact: ContactInfo;
 }

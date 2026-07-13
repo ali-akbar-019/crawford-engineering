@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import ServiceCard from "../components/sections/ServiceCard";
 import { siteData } from "../data/content";
 import type { ServiceCategory } from "../types";
+import { useDocumentTitle } from "../utils/useDocumentTitle";
 
 const pageVariants = {
     initial: { opacity: 0, y: 20 },
@@ -23,6 +24,10 @@ const FILTERS: { label: string; value: Filter }[] = [
 ];
 
 export default function Services() {
+    useDocumentTitle(
+        "Services",
+        "Road design, project management, BIM, cost estimation and laboratory engineering services."
+    );
     const [active, setActive] = useState<Filter>("all");
 
     const filtered = siteData.services.filter((s) =>

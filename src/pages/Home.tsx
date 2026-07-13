@@ -8,6 +8,8 @@ import Capabilities from "@/components/sections/Capabilities";
 import UpdatedHero from "@/components/sections/UpdatedHero";
 import WhatWeDo from "@/components/sections/WhatWeDo";
 import FeaturedProjects from "@/components/sections/FeaturedProjects";
+import Testimonials from "@/components/sections/Testimonials";
+import { useDocumentTitle } from "@/utils/useDocumentTitle";
 
 // Page transition wrapper
 const pageVariants = {
@@ -26,6 +28,10 @@ const fadeUp = {
 };
 
 export default function Home() {
+    useDocumentTitle(
+        "Crawford Engineering & Infrastructure",
+        "Future-ready engineering for transport, urban infrastructure and specialist laboratory environments."
+    );
     return (
         <motion.div
             variants={pageVariants as any}
@@ -161,6 +167,9 @@ export default function Home() {
 
             {/* ── Featured Projects Carousel ── */}
             <FeaturedProjects />
+
+            {/* ── Testimonials ── */}
+            <Testimonials />
 
             {/* ── CTA Banner ── */}
             <section className="relative bg-[#beff00] py-20 overflow-hidden">

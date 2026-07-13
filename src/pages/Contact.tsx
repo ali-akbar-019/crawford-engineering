@@ -12,7 +12,7 @@ import {
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { siteData } from "../data/content";
-
+import { useDocumentTitle } from "../utils/useDocumentTitle";
 const pageVariants = {
     initial: { opacity: 0, y: 20 },
     enter: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
@@ -63,6 +63,10 @@ const MARQUEE_ITEMS = [
 ];
 
 export default function Contact() {
+    useDocumentTitle(
+        "Contact",
+        "Get in touch with Crawford Engineering & Infrastructure across Australia, Qatar and the UAE."
+    );
     const [form, setForm] = useState<FormState>(INITIAL_FORM);
     const [submitted, setSubmitted] = useState(false);
     const [focused, setFocused] = useState<string | null>(null);

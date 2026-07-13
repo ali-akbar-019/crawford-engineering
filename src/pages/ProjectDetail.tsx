@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight, MapPin } from "lucide-react";
 import { siteData } from "../data/content";
+import { useDocumentTitle } from "../utils/useDocumentTitle";
 import type { Project } from "../types";
 
 const pageVariants = {
@@ -91,6 +92,11 @@ function HeroSlideshow({ images, title }: { images: string[]; title: string }) {
 export default function ProjectDetail() {
     const { id } = useParams<{ id: string }>();
     const project = siteData.projects.find((p) => p.id === id);
+
+    useDocumentTitle(
+        project?.title ?? "Project",
+        project?.description ?? "Crawford Engineering project."
+    );
 
     if (!project) {
         return <Navigate to="/projects" replace />;

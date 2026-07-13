@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectorCard from "../components/sections/SectorCard";
 import { siteData } from "../data/content";
-
+import { useDocumentTitle } from "../utils/useDocumentTitle";
 const pageVariants = {
     initial: { opacity: 0, y: 20 },
     enter: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
@@ -19,6 +19,10 @@ const ITEMS = [
 ];
 
 export default function Sectors() {
+    useDocumentTitle(
+        "Sectors",
+        "Transport & urban infrastructure, and campuses, utilities & facilities sectors we work across."
+    );
     return (
         <motion.div
             variants={pageVariants as any}

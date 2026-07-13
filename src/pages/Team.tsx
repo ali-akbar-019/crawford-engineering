@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Linkedin, Mail } from "lucide-react";
 import { siteData } from "../data/content";
+import { useDocumentTitle } from "../utils/useDocumentTitle";
 
 const pageVariants = {
     initial: { opacity: 0, y: 20 },
@@ -21,6 +22,10 @@ const fadeUp = {
 };
 
 export default function Team() {
+    useDocumentTitle(
+        "Our Team",
+        "Meet the leadership team at Crawford Engineering & Infrastructure."
+    );
     return (
         <motion.div
             variants={pageVariants as any}
@@ -108,7 +113,7 @@ export default function Team() {
             {/* ── Team grid ── */}
             <section className="relative bg-[#0a0a0a] py-16">
                 <div className="max-w-7xl mx-auto px-6 lg:px-10">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#1a1a1a]">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#1a1a1a]">
                         {siteData.team.map((member, i) => (
                             <motion.div
                                 key={member.id}
