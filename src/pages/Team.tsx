@@ -23,8 +23,76 @@ const fadeUp = {
 
 export default function Team() {
     useDocumentTitle(
-        "Our Team",
-        "Meet the leadership team at Crawford Engineering & Infrastructure."
+        "Board of Directors & Founders",
+        "Meet the board, founders and employees at Crawford Engineering & Infrastructure."
+    );
+
+    const founders = siteData.team.filter((member) => member.group === "founders");
+    const employees = siteData.team.filter((member) => member.group === "employees");
+
+    const renderTeamGrid = (members: typeof siteData.team) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-px bg-[#1a1a1a]">
+            {members.map((member, i) => (
+                <motion.div
+                    key={member.id}
+                    custom={i}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-60px" }}
+                    variants={fadeUp as any}
+                    className="group relative bg-[#0a0a0a] overflow-hidden"
+                >
+                    <div className="relative aspect-3/4 sm:aspect-4/5 overflow-hidden">
+                        <img
+                            src={member.photo}
+                            alt={member.name}
+                            loading="lazy"
+                            style={{ objectPosition: member.focalPoint ?? "50% 35%" }}
+                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-[#0a0a0a]/10 to-transparent" />
+                    </div>
+
+                    <div className="p-8 flex flex-col gap-3 border border-t-0 border-[#1a1a1a] group-hover:border-[#beff00]/30 transition-colors duration-300">
+                        <span
+                            className="text-[9px] tracking-[0.25em] uppercase text-[#beff00]"
+                            style={{ fontFamily: "'DM Mono', monospace" }}
+                        >
+                            {member.role}
+                        </span>
+                        <h3
+                            className="text-white text-3xl leading-none group-hover:text-[#beff00] transition-colors duration-300"
+                            style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+                        >
+                            {member.name}
+                        </h3>
+                        <p
+                            className="text-[#666] text-sm leading-relaxed"
+                            style={{ fontFamily: "'DM Sans', sans-serif" }}
+                        >
+                            {member.bio}
+                        </p>
+
+                        <div className="flex items-center gap-3 pt-3 mt-1 border-t border-[#161616]">
+                            <a
+                                href={`mailto:${siteData.contact.email}`}
+                                aria-label={`Email ${member.name}`}
+                                className="w-8 h-8 border border-[#222] flex items-center justify-center text-[#555] hover:border-[#beff00] hover:text-[#beff00] transition-colors duration-300"
+                            >
+                                <Mail size={13} />
+                            </a>
+                            <a
+                                href="#"
+                                aria-label={`${member.name} on LinkedIn`}
+                                className="w-8 h-8 border border-[#222] flex items-center justify-center text-[#555] hover:border-[#beff00] hover:text-[#beff00] transition-colors duration-300"
+                            >
+                                <Linkedin size={13} />
+                            </a>
+                        </div>
+                    </div>
+                </motion.div>
+            ))}
+        </div>
     );
     return (
         <motion.div
@@ -36,7 +104,7 @@ export default function Team() {
             {/* ── Page hero ── */}
             <section className="relative bg-[#0a0a0a] pt-36 pb-20 overflow-hidden">
                 <div className="absolute inset-0 grid-bg opacity-60 pointer-events-none" />
-                <div className="absolute top-0 right-0 w-[500px] h-[400px] bg-[#beff00]/5 rounded-full blur-[120px] pointer-events-none" />
+                <div className="absolute top-0 right-0 w-125 h-100 bg-[#beff00]/5 rounded-full blur-[120px] pointer-events-none" />
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
 
@@ -84,7 +152,7 @@ export default function Team() {
                                     className="text-[clamp(3.5rem,9vw,9rem)] leading-none text-[#beff00]"
                                     style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                                 >
-                                    Team
+                                    Founders
                                 </motion.h1>
                             </div>
                         </div>
@@ -96,8 +164,8 @@ export default function Team() {
                             className="text-[#555] text-sm leading-relaxed max-w-sm lg:pb-4"
                             style={{ fontFamily: "'DM Sans', sans-serif" }}
                         >
-                            The people leading delivery across every Crawford Engineering
-                            project, from concept design through to hand‑over.
+                            The people leading Crawford Engineering across Australia and the UAE,
+                            from strategy and delivery through to client relationships.
                         </motion.p>
                     </div>
 
@@ -105,16 +173,40 @@ export default function Team() {
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
                         transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                        className="mt-12 w-full h-[1px] bg-[#1e1e1e] origin-left"
+                        className="mt-12 w-full h-px bg-[#1e1e1e] origin-left"
                     />
                 </div>
             </section>
 
-            {/* ── Team grid ── */}
+            {/* ── Founders grid ── */}
             <section className="relative bg-[#0a0a0a] py-16">
                 <div className="max-w-7xl mx-auto px-6 lg:px-10">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#1a1a1a]">
-                        {siteData.team.map((member, i) => (
+                    <div className="flex items-end gap-4 mb-6">
+                        <span
+                            className="text-[#beff00] text-xs tracking-[0.25em] uppercase"
+                            style={{ fontFamily: "'DM Mono', monospace" }}
+                        >
+                            Board of Directors & Founders
+                        </span>
+                        <div className="h-px flex-1 bg-[#1a1a1a] mb-1" />
+                    </div>
+                    {renderTeamGrid(founders)}
+                </div>
+            </section>
+
+            <section className="relative bg-[#0a0a0a] pb-16">
+                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                    <div className="flex items-end gap-4 mb-6 mt-2">
+                        <span
+                            className="text-[#beff00] text-xs tracking-[0.25em] uppercase"
+                            style={{ fontFamily: "'DM Mono', monospace" }}
+                        >
+                            Employees
+                        </span>
+                        <div className="h-px flex-1 bg-[#1a1a1a] mb-1" />
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#1a1a1a] lg:max-w-4xl">
+                        {employees.map((member, i) => (
                             <motion.div
                                 key={member.id}
                                 custom={i}
@@ -124,14 +216,15 @@ export default function Team() {
                                 variants={fadeUp as any}
                                 className="group relative bg-[#0a0a0a] overflow-hidden"
                             >
-                                <div className="relative aspect-[4/3] overflow-hidden">
+                                <div className="relative aspect-4/3 overflow-hidden">
                                     <img
                                         src={member.photo}
                                         alt={member.name}
                                         loading="lazy"
+                                        style={{ objectPosition: member.focalPoint ?? "50% 35%" }}
                                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/10 to-transparent" />
+                                    <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-[#0a0a0a]/10 to-transparent" />
                                 </div>
 
                                 <div className="p-8 flex flex-col gap-3 border border-t-0 border-[#1a1a1a] group-hover:border-[#beff00]/30 transition-colors duration-300">

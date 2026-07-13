@@ -55,6 +55,8 @@ export interface TeamMember {
     role: string;
     bio: string;
     photo: string;
+    focalPoint?: string;
+    group: "founders" | "employees";
 }
 
 export interface Office {
