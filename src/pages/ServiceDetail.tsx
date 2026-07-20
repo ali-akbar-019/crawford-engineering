@@ -50,7 +50,7 @@ export default function ServiceDetail() {
                 <div className="absolute inset-0 grid-bg opacity-60 pointer-events-none" />
                 <div className="absolute top-0 right-0 w-[500px] h-[400px] bg-[#beff00]/5 rounded-full blur-[120px] pointer-events-none" />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
 
                     {/* Breadcrumb */}
                     <motion.div
@@ -124,7 +124,7 @@ export default function ServiceDetail() {
 
             {/* ── Main content ── */}
             <section className="relative bg-[#0a0a0a] pb-16">
-                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
 
                     {/* Hero image */}
                     <motion.div
@@ -245,7 +245,7 @@ export default function ServiceDetail() {
                                     Need this capability?
                                 </h4>
                                 <p
-                                    className="text-[#888] text-sm leading-relaxed mb-5"
+                                    className="text-[#888] text-base lg:text-lg leading-relaxed mb-5"
                                     style={{ fontFamily: "'DM Sans', sans-serif" }}
                                 >
                                     Tell us about your project and we'll come back with scope,
@@ -283,7 +283,7 @@ export default function ServiceDetail() {
             {/* ── Related services ── */}
             {related.length > 0 && (
                 <section className="relative bg-[#080808] border-t border-[#1a1a1a] py-20">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                    <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -320,7 +320,7 @@ export default function ServiceDetail() {
                                             {s.title}
                                         </h3>
                                         <p
-                                            className="text-[#555] text-sm leading-relaxed"
+                                            className="text-[#555] text-base lg:text-lg leading-relaxed"
                                             style={{ fontFamily: "'DM Sans', sans-serif" }}
                                         >
                                             {s.description}

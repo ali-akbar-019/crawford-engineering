@@ -51,7 +51,7 @@ export default function Home() {
             <section className="relative bg-[#080808] py-24 overflow-hidden">
                 <div className="absolute inset-0 grid-bg opacity-50 pointer-events-none" />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
 
                     {/* Header row */}
                     <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
@@ -140,7 +140,7 @@ export default function Home() {
                                     </h3>
 
                                     <p
-                                        className="text-[#555] text-sm leading-relaxed flex-1"
+                                        className="text-[#555] text-base lg:text-lg leading-relaxed flex-1"
                                         style={{ fontFamily: "'DM Sans', sans-serif" }}
                                     >
                                         {service.description}
@@ -183,7 +183,7 @@ export default function Home() {
                     }}
                 />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+                <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
                     <div className="overflow-hidden">
                         <motion.h2
                             initial={{ y: "100%" }}
@@ -220,6 +220,19 @@ export default function Home() {
                             />
                         </Link>
                     </motion.div>
+                </div>
+            </section>
+
+            {/* ── Small closing strip ── */}
+            <section className="relative bg-[#0a0a0a] border-t border-[#1a1a1a] py-8">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16 flex items-center justify-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#beff00]" />
+                    <p
+                        className="text-[#666] text-sm text-center"
+                        style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    >
+                        Ready when you are. No pressure, just a conversation about what you need.
+                    </p>
                 </div>
             </section>
 

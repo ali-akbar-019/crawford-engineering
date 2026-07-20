@@ -119,7 +119,7 @@ export default function ProjectCard({ project, index, view }: ProjectCardProps) 
                             <StatusDot status={project.status} />
                         </div>
                         <p
-                            className="text-[#555] text-sm leading-relaxed max-w-lg"
+                            className="text-[#555] text-base lg:text-lg leading-relaxed max-w-lg"
                             style={{ fontFamily: "'DM Sans', sans-serif" }}
                         >
                             {project.description}
@@ -213,7 +213,7 @@ export default function ProjectCard({ project, index, view }: ProjectCardProps) 
 
                 {/* Description */}
                 <p
-                    className="text-[#555] text-sm leading-relaxed flex-1"
+                    className="text-[#555] text-base lg:text-lg leading-relaxed flex-1"
                     style={{ fontFamily: "'DM Sans', sans-serif" }}
                 >
                     {project.description}

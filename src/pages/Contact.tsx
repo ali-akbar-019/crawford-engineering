@@ -102,7 +102,7 @@ export default function Contact() {
                 <div className="absolute inset-0 grid-bg opacity-60 pointer-events-none" />
                 <div className="absolute top-0 right-0 w-[500px] h-[400px] bg-[#beff00]/5 rounded-full blur-[130px] pointer-events-none" />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
 
                     {/* Breadcrumb */}
                     <motion.div
@@ -162,7 +162,7 @@ export default function Contact() {
 
             {/* ── Main content ── */}
             <section className="relative bg-[#0a0a0a] py-16">
-                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 
                         {/* ── Left: contact info ── */}
@@ -173,7 +173,7 @@ export default function Contact() {
                                 initial="hidden"
                                 animate="visible"
                                 variants={fadeUp as any}
-                                className="text-[#666] text-sm leading-relaxed max-w-sm"
+                                className="text-[#666] text-base lg:text-xl leading-relaxed max-w-sm"
                                 style={{ fontFamily: "'DM Sans', sans-serif" }}
                             >
                                 To discuss an upcoming project or request a capability
@@ -196,12 +196,7 @@ export default function Contact() {
                                         value: siteData.contact.phone,
                                         href: `tel:${siteData.contact.phone}`,
                                     },
-                                    {
-                                        icon: <MapPin size={16} />,
-                                        label: "Office",
-                                        value: siteData.contact.office,
-                                        href: null,
-                                    },
+                                    // removed the location
                                 ].map((item, i) => (
                                     <motion.div
                                         key={item.label}
@@ -306,7 +301,7 @@ export default function Contact() {
                                                 Message received
                                             </h3>
                                             <p
-                                                className="text-[#555] text-sm leading-relaxed max-w-xs"
+                                                className="text-[#555] text-base lg:text-xl leading-relaxed max-w-xs"
                                                 style={{ fontFamily: "'DM Sans', sans-serif" }}
                                             >
                                                 Thank you for reaching out. We'll review your enquiry
@@ -517,7 +512,7 @@ export default function Contact() {
             {/* ── Global offices ── */}
             <section className="relative bg-[#080808] border-t border-[#1a1a1a] py-20 overflow-hidden">
                 <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -557,7 +552,7 @@ export default function Contact() {
                                     {office.country}
                                 </h3>
                                 <p
-                                    className="text-[#666] text-sm leading-relaxed"
+                                    className="text-[#666] text-base lg:text-xl leading-relaxed"
                                     style={{ fontFamily: "'DM Sans', sans-serif" }}
                                 >
                                     {office.address}

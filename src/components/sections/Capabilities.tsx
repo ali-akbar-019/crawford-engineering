@@ -19,7 +19,7 @@ export default function Capabilities() {
             {/* ── Lime glow ── */}
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#beff00]/4 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="max-w-7xl mx-auto px-6 lg:px-10">
+            <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
 
                 {/* Section label */}
                 <motion.div
@@ -83,7 +83,7 @@ export default function Capabilities() {
                                         {cap.label}
                                     </h3>
                                     <p
-                                        className="text-[#666] text-sm leading-relaxed"
+                                        className="text-[#666] text-base lg:text-lg leading-relaxed"
                                         style={{ fontFamily: "'DM Sans', sans-serif" }}
                                     >
                                         {cap.description}

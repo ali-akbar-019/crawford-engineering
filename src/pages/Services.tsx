@@ -46,7 +46,7 @@ export default function Services() {
                 <div className="absolute inset-0 grid-bg opacity-60 pointer-events-none" />
                 <div className="absolute top-0 right-0 w-[500px] h-[400px] bg-[#beff00]/5 rounded-full blur-[120px] pointer-events-none" />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
 
                     {/* Breadcrumb */}
                     <motion.div
@@ -101,7 +101,7 @@ export default function Services() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4, duration: 0.5 }}
-                            className="text-[#555] text-sm leading-relaxed max-w-sm lg:pb-4"
+                            className="text-[#555] text-base lg:text-lg leading-relaxed max-w-sm lg:pb-4"
                             style={{ fontFamily: "'DM Sans', sans-serif" }}
                         >
                             Integrated transport, infrastructure and specialist laboratory
@@ -121,7 +121,7 @@ export default function Services() {
 
             {/* ── Filter + Grid ── */}
             <section className="relative bg-[#0a0a0a] py-16">
-                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
 
                     {/* Filter tabs */}
                     <motion.div
@@ -184,7 +184,7 @@ export default function Services() {
 
             {/* ── Bottom CTA ── */}
             <section className="relative bg-[#080808] border-t border-[#1a1a1a] py-20">
-                <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
                     <div className="overflow-hidden">
                         <motion.h2
                             initial={{ y: "100%" }}

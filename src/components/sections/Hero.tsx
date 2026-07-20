@@ -68,7 +68,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-10 pt-32 lg:pt-36"
+                className="relative z-10 max-w-[1680px] mx-auto w-full px-6 lg:px-10 2xl:px-16 pt-32 lg:pt-36"
             >
                 <div className="flex items-center gap-3">
                     <div className="w-1.5 h-1.5 bg-[#beff00] rounded-full animate-pulse" />
@@ -82,7 +82,7 @@ export default function Hero() {
             </motion.div>
 
             {/* ── Main hero content ── */}
-            <div className="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-10 flex-1 flex flex-col justify-center py-12">
+            <div className="relative z-10 max-w-[1680px] mx-auto w-full px-6 lg:px-10 2xl:px-16 flex-1 flex flex-col justify-center py-12">
 
                 {/* Big display heading */}
                 <div className="overflow-hidden mb-2">
@@ -149,7 +149,7 @@ export default function Hero() {
                         className="flex flex-col gap-5 lg:max-w-sm"
                     >
                         <p
-                            className="text-[#666] text-sm leading-relaxed"
+                            className="text-[#666] text-base lg:text-lg leading-relaxed"
                             style={{ fontFamily: "'DM Sans', sans-serif" }}
                         >
                             End‑to‑end engineering services for transport infrastructure
@@ -201,7 +201,7 @@ export default function Hero() {
                 transition={{ delay: 1, duration: 0.6 }}
                 className="relative z-10 border-t border-[#1e1e1e]"
             >
-                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
                     <div className="grid grid-cols-2 lg:grid-cols-4">
                         {STATS.map((stat, i) => (
                             <div

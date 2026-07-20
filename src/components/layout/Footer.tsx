@@ -27,7 +27,7 @@ export default function Footer() {
             <div className="absolute -top-32 -left-32 w-80 h-80 rounded-full bg-[#beff00]/5 blur-3xl pointer-events-none" />
 
             {/* ── Main footer content ── */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-10">
+            <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16 pt-16 pb-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
 
                     {/* ── Col 1: Brand ── */}
@@ -59,7 +59,7 @@ export default function Footer() {
                         </Link>
 
                         <p
-                            className="text-[#666] text-sm leading-relaxed max-w-[220px]"
+                            className="text-[#666] text-base lg:text-lg leading-relaxed max-w-[220px]"
                             style={{ fontFamily: "'DM Sans', sans-serif" }}
                         >
                             {siteData.description}
@@ -189,20 +189,7 @@ export default function Footer() {
                                 </a>
                             </li>
 
-                            <li>
-                                <div className="flex items-start gap-3 text-[#888]">
-                                    <MapPin
-                                        size={14}
-                                        className="mt-0.5 shrink-0 text-[#beff00]"
-                                    />
-                                    <span
-                                        className="text-sm leading-snug"
-                                        style={{ fontFamily: "'DM Sans', sans-serif" }}
-                                    >
-                                        {siteData.contact.office}
-                                    </span>
-                                </div>
-                            </li>
+
                         </ul>
 
                         {/* CTA */}

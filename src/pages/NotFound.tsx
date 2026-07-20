@@ -51,7 +51,7 @@ export default function NotFound() {
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
-                    className="text-[#666] text-sm leading-relaxed mb-10"
+                    className="text-[#666] text-base lg:text-lg leading-relaxed mb-10"
                     style={{ fontFamily: "'DM Sans', sans-serif" }}
                 >
                     The page you're looking for doesn't exist or may have moved.

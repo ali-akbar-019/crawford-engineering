@@ -30,70 +30,83 @@ export default function Team() {
     const founders = siteData.team.filter((member) => member.group === "founders");
     const employees = siteData.team.filter((member) => member.group === "employees");
 
-    const renderTeamGrid = (members: typeof siteData.team) => (
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-px bg-[#1a1a1a]">
-            {members.map((member, i) => (
-                <motion.div
-                    key={member.id}
-                    custom={i}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-60px" }}
-                    variants={fadeUp as any}
-                    className="group relative bg-[#0a0a0a] overflow-hidden"
-                >
-                    <div className="relative aspect-3/4 sm:aspect-4/5 overflow-hidden">
-                        <img
-                            src={member.photo}
-                            alt={member.name}
-                            loading="lazy"
-                            style={{ objectPosition: member.focalPoint ?? "50% 35%" }}
-                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-[#0a0a0a]/10 to-transparent" />
-                    </div>
-
-                    <div className="p-8 flex flex-col gap-3 border border-t-0 border-[#1a1a1a] group-hover:border-[#beff00]/30 transition-colors duration-300">
-                        <span
-                            className="text-[9px] tracking-[0.25em] uppercase text-[#beff00]"
-                            style={{ fontFamily: "'DM Mono', monospace" }}
-                        >
-                            {member.role}
-                        </span>
-                        <h3
-                            className="text-white text-3xl leading-none group-hover:text-[#beff00] transition-colors duration-300"
-                            style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-                        >
-                            {member.name}
-                        </h3>
-                        <p
-                            className="text-[#666] text-sm leading-relaxed"
-                            style={{ fontFamily: "'DM Sans', sans-serif" }}
-                        >
-                            {member.bio}
-                        </p>
-
-                        <div className="flex items-center gap-3 pt-3 mt-1 border-t border-[#161616]">
-                            <a
-                                href={`mailto:${siteData.contact.email}`}
-                                aria-label={`Email ${member.name}`}
-                                className="w-8 h-8 border border-[#222] flex items-center justify-center text-[#555] hover:border-[#beff00] hover:text-[#beff00] transition-colors duration-300"
-                            >
-                                <Mail size={13} />
-                            </a>
-                            <a
-                                href="#"
-                                aria-label={`${member.name} on LinkedIn`}
-                                className="w-8 h-8 border border-[#222] flex items-center justify-center text-[#555] hover:border-[#beff00] hover:text-[#beff00] transition-colors duration-300"
-                            >
-                                <Linkedin size={13} />
-                            </a>
+    const renderFounderRows = (members: typeof siteData.team) => (
+        <div className="flex flex-col gap-px bg-[#1a1a1a]">
+            {members.map((member, i) => {
+                const imageFirst = i % 2 === 0;
+                return (
+                    <motion.div
+                        key={member.id}
+                        custom={i}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-60px" }}
+                        variants={fadeUp as any}
+                        className={`group relative bg-[#0a0a0a] flex flex-col ${imageFirst ? "lg:flex-row" : "lg:flex-row-reverse"
+                            }`}
+                    >
+                        {/* Photo half */}
+                        <div className="relative w-full lg:w-1/2 aspect-[4/3] lg:aspect-auto overflow-hidden">
+                            <img
+                                src={member.photo}
+                                alt={member.name}
+                                loading="lazy"
+                                style={{ objectPosition: member.focalPoint ?? "50% 35%" }}
+                                className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/60 via-transparent to-transparent lg:hidden" />
                         </div>
-                    </div>
-                </motion.div>
-            ))}
+
+                        {/* Text half */}
+                        <div className="relative w-full lg:w-1/2 flex flex-col justify-center gap-4 p-8 lg:p-14 border-t lg:border-t-0 border-[#1a1a1a] group-hover:border-[#beff00]/20 transition-colors duration-300">
+                            <span
+                                className="text-[#333] text-xs tracking-widest"
+                                style={{ fontFamily: "'DM Mono', monospace" }}
+                            >
+                                0{i + 1}
+                            </span>
+                            <span
+                                className="text-[10px] tracking-[0.25em] uppercase text-[#beff00]"
+                                style={{ fontFamily: "'DM Mono', monospace" }}
+                            >
+                                {member.role}
+                            </span>
+                            <h3
+                                className="text-white text-4xl lg:text-5xl leading-none group-hover:text-[#beff00] transition-colors duration-300"
+                                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+                            >
+                                {member.name}
+                            </h3>
+                            <p
+                                className="text-[#666] text-base lg:text-xl leading-relaxed max-w-md"
+                                style={{ fontFamily: "'DM Sans', sans-serif" }}
+                            >
+                                {member.bio}
+                            </p>
+
+                            <div className="flex items-center gap-3 pt-2">
+                                <a
+                                    href={`mailto:${siteData.contact.email}`}
+                                    aria-label={`Email ${member.name}`}
+                                    className="w-9 h-9 border border-[#222] flex items-center justify-center text-[#555] hover:border-[#beff00] hover:text-[#beff00] transition-colors duration-300"
+                                >
+                                    <Mail size={14} />
+                                </a>
+                                <a
+                                    href="#"
+                                    aria-label={`${member.name} on LinkedIn`}
+                                    className="w-9 h-9 border border-[#222] flex items-center justify-center text-[#555] hover:border-[#beff00] hover:text-[#beff00] transition-colors duration-300"
+                                >
+                                    <Linkedin size={14} />
+                                </a>
+                            </div>
+                        </div>
+                    </motion.div>
+                );
+            })}
         </div>
     );
+
     return (
         <motion.div
             variants={pageVariants as any}
@@ -104,9 +117,9 @@ export default function Team() {
             {/* ── Page hero ── */}
             <section className="relative bg-[#0a0a0a] pt-36 pb-20 overflow-hidden">
                 <div className="absolute inset-0 grid-bg opacity-60 pointer-events-none" />
-                <div className="absolute top-0 right-0 w-125 h-100 bg-[#beff00]/5 rounded-full blur-[120px] pointer-events-none" />
+                <div className="absolute top-0 right-0 w-[500px] h-[400px] bg-[#beff00]/5 rounded-full blur-[120px] pointer-events-none" />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
 
                     {/* Breadcrumb */}
                     <motion.div
@@ -161,7 +174,7 @@ export default function Team() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4, duration: 0.5 }}
-                            className="text-[#555] text-sm leading-relaxed max-w-sm lg:pb-4"
+                            className="text-[#555] text-base lg:text-lg leading-relaxed max-w-sm lg:pb-4"
                             style={{ fontFamily: "'DM Sans', sans-serif" }}
                         >
                             The people leading Crawford Engineering across Australia and the UAE,
@@ -180,7 +193,7 @@ export default function Team() {
 
             {/* ── Founders grid ── */}
             <section className="relative bg-[#0a0a0a] py-16">
-                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
                     <div className="flex items-end gap-4 mb-6">
                         <span
                             className="text-[#beff00] text-xs tracking-[0.25em] uppercase"
@@ -190,12 +203,12 @@ export default function Team() {
                         </span>
                         <div className="h-px flex-1 bg-[#1a1a1a] mb-1" />
                     </div>
-                    {renderTeamGrid(founders)}
+                    {renderFounderRows(founders)}
                 </div>
             </section>
 
             <section className="relative bg-[#0a0a0a] pb-16">
-                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
                     <div className="flex items-end gap-4 mb-6 mt-2">
                         <span
                             className="text-[#beff00] text-xs tracking-[0.25em] uppercase"
@@ -216,7 +229,7 @@ export default function Team() {
                                 variants={fadeUp as any}
                                 className="group relative bg-[#0a0a0a] overflow-hidden"
                             >
-                                <div className="relative aspect-4/3 overflow-hidden">
+                                <div className="relative aspect-[4/3] overflow-hidden">
                                     <img
                                         src={member.photo}
                                         alt={member.name}
@@ -241,7 +254,7 @@ export default function Team() {
                                         {member.name}
                                     </h3>
                                     <p
-                                        className="text-[#666] text-sm leading-relaxed"
+                                        className="text-[#666] text-base lg:text-lg leading-relaxed"
                                         style={{ fontFamily: "'DM Sans', sans-serif" }}
                                     >
                                         {member.bio}
@@ -272,7 +285,7 @@ export default function Team() {
 
             {/* ── Bottom CTA ── */}
             <section className="relative bg-[#080808] border-t border-[#1a1a1a] py-20">
-                <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
                     <div className="overflow-hidden">
                         <motion.h2
                             initial={{ y: "100%" }}

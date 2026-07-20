@@ -32,14 +32,7 @@ const WHAT_WE_DO = [
             "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=800&auto=format&fit=crop",
         videoSrc: "",
     },
-    {
-        title: "Site Supervision",
-        description:
-            "On‑site coordination and quality oversight from mobilisation through to practical completion.",
-        poster:
-            "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop",
-        videoSrc: "",
-    },
+
 ];
 
 const fadeUp = {
@@ -56,7 +49,7 @@ const WhatWeDo = () => {
         <section id="what-we-do" className="relative bg-[#0a0a0a] py-24 overflow-hidden">
             <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+            <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
                 <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-10 lg:gap-14 items-start">
 
                     {/* ── Left: intro panel ── */}
@@ -85,7 +78,7 @@ const WhatWeDo = () => {
                         </h2>
 
                         <p
-                            className="text-[#888] text-sm leading-relaxed mb-7"
+                            className="text-[#888] text-base lg:text-lg leading-relaxed mb-7"
                             style={{ fontFamily: "'DM Sans', sans-serif" }}
                         >
                             From concept design through to commissioning, our team supports

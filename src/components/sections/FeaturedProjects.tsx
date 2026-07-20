@@ -42,7 +42,7 @@ export default function FeaturedProjects() {
         <section className="relative bg-[#080808] py-24 overflow-hidden">
             <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+            <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
 
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
@@ -151,7 +151,7 @@ export default function FeaturedProjects() {
                                                 {project.title}
                                             </h3>
                                             <p
-                                                className="text-[#666] text-sm leading-relaxed flex-1"
+                                                className="text-[#666] text-base lg:text-lg leading-relaxed flex-1"
                                                 style={{ fontFamily: "'DM Sans', sans-serif" }}
                                             >
                                                 {project.description}

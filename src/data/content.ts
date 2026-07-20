@@ -228,24 +228,30 @@ export const siteData: SiteData = {
             timeline: ["Concept & Feasibility", "Detailed Design", "Construction / Delivery", "Handover & Closeout"],
             currentStage: 1,
         },
+        // this is being upgraded to the road maintenance
         {
-            id: "lab-upgrade",
-            title: "Engineering Lab Upgrade",
+            id: "road-maintenance",
+            title: "Road Maintenance",
             description:
-                "Commissioning support and documentation for refurbished lab equipment, including SOPs and risk analysis.",
+                "Comprehensive road maintenance and rehabilitation services, including pavement repairs, resurfacing, drainage improvements, and road safety enhancements.",
             longDescription:
-                "Following a full refurbishment of a university engineering lab, our team delivered commissioning support for newly installed test equipment along with the SOPs and risk analysis documentation staff and students now rely on day to day. The project closed out with a full set of as‑installed records handed over to the facilities team.",
-            tags: ["Commissioning", "SOPs", "Risk analysis"],
-            sector: "Campuses & Facilities",
+                "This project focused on restoring and maintaining key roadway infrastructure to improve safety, durability, and traffic flow. The scope included asphalt resurfacing, pothole repairs, pavement rehabilitation, line marking, drainage system upgrades, and routine maintenance works. Our team ensured all activities were completed in accordance with local engineering standards while minimizing disruptions to motorists through carefully planned traffic management and phased construction.",
+            tags: ["Road Rehabilitation", "Asphalt Resurfacing", "Traffic Management"],
+            sector: "Transport Infrastructure",
             status: "completed",
             location: "Melbourne, VIC",
-            image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200&auto=format&fit=crop",
+            image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop",
             images: [
-                "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1581091012184-7e0cdfbb6797?q=80&w=1200&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1200&auto=format&fit=crop",
             ],
-            timeline: ["Concept & Feasibility", "Detailed Design", "Construction / Delivery", "Handover & Closeout"],
+            timeline: [
+                "Planning & Assessment",
+                "Road Rehabilitation",
+                "Surface Finishing",
+                "Project Completion"
+            ],
             currentStage: 3,
         },
         {
@@ -257,7 +263,7 @@ export const siteData: SiteData = {
                 "This urban arterial corridor upgrade required a careful balance between vehicle capacity and pedestrian safety through a dense town centre. Our geometric design and staging plan sequenced the works around existing businesses and bus routes, and the project reached practical completion with strong safety outcomes for the local community.",
             tags: ["Road design", "Safety‑led design"],
             sector: "Transport & Urban",
-            status: "completed",
+            status: "in-progress",
             location: "Sydney, NSW",
             image: "https://images.unsplash.com/photo-1502489597346-dad15683d4c2?q=80&w=1200&auto=format&fit=crop",
             images: [
@@ -268,46 +274,7 @@ export const siteData: SiteData = {
             timeline: ["Concept & Feasibility", "Detailed Design", "Construction / Delivery", "Handover & Closeout"],
             currentStage: 3,
         },
-        {
-            id: "campus-utilities",
-            title: "Campus Utilities Renewal",
-            description:
-                "Coordinated shutdown planning and functional testing for campus energy and utilities infrastructure.",
-            longDescription:
-                "An ageing campus utilities network is being progressively renewed while the campus remains fully operational. We are planning coordinated shutdowns around teaching schedules and running functional testing on each new section before it goes live, keeping disruption to staff and students to an absolute minimum.",
-            tags: ["Commissioning", "Utilities"],
-            sector: "Campuses & Facilities",
-            status: "in-progress",
-            location: "Adelaide, SA",
-            image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop",
-            images: [
-                "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1581093458791-9f3113b8e8b3?q=80&w=1200&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
-            ],
-            timeline: ["Concept & Feasibility", "Detailed Design", "Construction / Delivery", "Handover & Closeout"],
-            currentStage: 2,
-        },
-        {
-            id: "precinct-active-transport",
-            title: "Precinct Active Transport Network",
-            description:
-                "Concept‑to‑detailed design for a connected cycling and pedestrian network across a growth precinct.",
-            longDescription:
-                "A fast‑growing urban precinct needed a connected network of cycling and pedestrian paths linking new residential areas to transit and town centre amenities. We carried the project from initial concept sketches through to detailed design, and the completed network now forms the backbone of active transport in the precinct.",
-            tags: ["Concept", "Active transport"],
-            sector: "Transport & Urban",
-            status: "completed",
-            location: "Perth, WA",
-            image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1200&auto=format&fit=crop",
-            images: [
-                "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1200&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1502489597346-dad15683d4c2?q=80&w=1200&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=1200&auto=format&fit=crop",
-            ],
-            timeline: ["Concept & Feasibility", "Detailed Design", "Construction / Delivery", "Handover & Closeout"],
-            currentStage: 3,
-        },
+
     ],
 
     sectors: [

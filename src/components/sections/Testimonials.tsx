@@ -18,7 +18,7 @@ export default function Testimonials() {
         <section className="relative bg-[#0a0a0a] py-24 overflow-hidden">
             <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+            <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -60,7 +60,7 @@ export default function Testimonials() {
                         >
                             <Quote size={22} className="text-[#beff00]/40" />
                             <p
-                                className="text-[#ccc] text-sm leading-relaxed flex-1"
+                                className="text-[#ccc] text-base lg:text-lg leading-relaxed flex-1"
                                 style={{ fontFamily: "'DM Sans', sans-serif" }}
                             >
                                 "{t.quote}"

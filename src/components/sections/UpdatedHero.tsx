@@ -118,33 +118,17 @@ export default function UpdatedHero() {
             {/* ── Single subtle lime glow — kept minimal ── */}
             <div className="absolute top-1/4 right-0 w-[450px] h-[450px] bg-[#beff00]/6 rounded-full blur-[140px] pointer-events-none" />
 
-            {/* ── Top label bar ── */}
-            <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-10 pt-28 lg:pt-32"
-            >
-                <div className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 bg-[#beff00] rounded-full animate-pulse" />
-                    <span
-                        className="text-[#beff00] text-xs tracking-[0.3em] uppercase"
-                        style={{ fontFamily: "'DM Mono', monospace" }}
-                    >
-                        Crawford Engineering & Infrastructure
-                    </span>
-                </div>
-            </motion.div>
+
 
             {/* ── Main hero content — single column, heading leads ── */}
-            <div className="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-10 flex-1 flex flex-col justify-center py-10 lg:py-12">
+            <div className="relative z-10 max-w-[1680px] mx-auto w-full px-6 lg:px-10 2xl:px-16 flex-1 flex flex-col items-center text-center lg:items-start lg:text-left justify-center pt-32 lg:pt-36">
 
                 <div className="overflow-hidden mb-1">
                     <motion.h1
                         initial={{ y: "100%" }}
                         animate={{ y: 0 }}
                         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                        className="text-[clamp(3.2rem,11vw,10.5rem)] leading-none text-white tracking-tight"
+                        className="text-[clamp(4.5rem,17vw,10.5rem)] leading-none text-white tracking-tight"
                         style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                     >
                         CRAWFORD
@@ -158,7 +142,7 @@ export default function UpdatedHero() {
                         transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                     >
                         <h2
-                            className="text-[clamp(3.2rem,11vw,10.5rem)] leading-none text-[#beff00] tracking-tight"
+                            className="text-[clamp(4.5rem,17vw,10.5rem)] leading-none text-[#beff00] tracking-tight"
                             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                         >
                             ENGINEERING
@@ -166,12 +150,12 @@ export default function UpdatedHero() {
                     </motion.div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:items-end">
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:items-end w-full">
                     <motion.p
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.6 }}
-                        className="text-[#999] text-base lg:text-lg leading-relaxed max-w-xl"
+                        className="text-[#999] text-base lg:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0"
                         style={{ fontFamily: "'DM Sans', sans-serif" }}
                     >
                         End‑to‑end engineering services for transport infrastructure and
@@ -182,7 +166,7 @@ export default function UpdatedHero() {
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.6 }}
-                        className="flex flex-wrap items-center gap-4 shrink-0"
+                        className="flex flex-wrap items-center justify-center lg:justify-start gap-4 shrink-0"
                     >
                         <Link to="/projects">
                             <Button
@@ -224,7 +208,7 @@ export default function UpdatedHero() {
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.6 }}
-                    className="flex items-center gap-2 mb-10 min-h-[2rem] lg:min-h-[2.25rem]"
+                    className="flex items-center justify-center lg:justify-start gap-2 mb-10 min-h-[2rem] lg:min-h-[2.25rem] w-full"
                 >
                     <span
                         className="text-white text-lg lg:text-xl tracking-wide"
@@ -240,9 +224,9 @@ export default function UpdatedHero() {
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.7, duration: 0.6 }}
-                    className="flex flex-col gap-3"
+                    className="flex flex-col gap-3 w-full"
                 >
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between w-full">
                         <span
                             className="text-[#666] text-[10px] tracking-[0.25em] uppercase"
                             style={{ fontFamily: "'DM Mono', monospace" }}
@@ -290,7 +274,7 @@ export default function UpdatedHero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1, duration: 0.6 }}
-                    className="group mt-10 flex items-center gap-2 self-start text-[#999] hover:text-[#beff00] transition-colors"
+                    className="group my-10 flex items-center gap-2 self-center lg:self-start text-[#999] hover:text-[#beff00] transition-colors"
                 >
                     <span
                         className="text-xs tracking-[0.2em] uppercase"
@@ -309,15 +293,14 @@ export default function UpdatedHero() {
                 transition={{ delay: 1.1, duration: 0.6 }}
                 className="relative z-10 border-t border-white/10 bg-[#0a0a0a]/80 backdrop-blur-sm"
             >
-                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
                     <div className="grid grid-cols-2 lg:grid-cols-4">
                         {STATS.map((stat, i) => (
                             <div
                                 key={i}
                                 className={`
-                  py-6 flex flex-col gap-1
+                  py-6 flex flex-col gap-1 items-center lg:items-start text-center lg:text-left
                   ${i !== STATS.length - 1 ? "border-r border-white/10" : ""}
-                  ${i < 2 ? "pr-6 lg:pr-0" : "pl-6 lg:pl-0"}
                   lg:px-8 lg:first:pl-0
                 `}
                             >

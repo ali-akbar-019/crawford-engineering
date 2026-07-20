@@ -91,7 +91,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
 
                     {/* Description */}
                     <p
-                        className="text-[#555] text-sm leading-relaxed flex-1"
+                        className="text-[#555] text-base lg:text-lg leading-relaxed flex-1"
                         style={{ fontFamily: "'DM Sans', sans-serif" }}
                     >
                         {service.description}

@@ -35,7 +35,7 @@ export default function Sectors() {
                 <div className="absolute inset-0 grid-bg opacity-60 pointer-events-none" />
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[#beff00]/4 rounded-full blur-[120px] pointer-events-none" />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
 
                     {/* Breadcrumb */}
                     <motion.div
@@ -91,7 +91,7 @@ export default function Sectors() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4, duration: 0.5 }}
-                            className="text-[#555] text-sm leading-relaxed max-w-sm lg:pb-4"
+                            className="text-[#555] text-base lg:text-lg leading-relaxed max-w-sm lg:pb-4"
                             style={{ fontFamily: "'DM Sans', sans-serif" }}
                         >
                             Experience across public and private infrastructure and
@@ -111,7 +111,7 @@ export default function Sectors() {
 
             {/* ── Sector cards ── */}
             <section className="relative bg-[#0a0a0a] py-16">
-                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[#161616]">
                         {siteData.sectors.map((sector, i) => (
                             <SectorCard key={sector.id} sector={sector} index={i} />
@@ -124,7 +124,7 @@ export default function Sectors() {
             <section className="relative bg-[#080808] border-t border-b border-[#1a1a1a] py-16 overflow-hidden">
                 <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
 
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
@@ -171,7 +171,7 @@ export default function Sectors() {
                                     {item.title}
                                 </h3>
                                 <p
-                                    className="text-[#555] text-sm leading-relaxed"
+                                    className="text-[#555] text-base lg:text-lg leading-relaxed"
                                     style={{ fontFamily: "'DM Sans', sans-serif" }}
                                 >
                                     {item.desc}
@@ -207,7 +207,7 @@ export default function Sectors() {
 
             {/* ── CTA ── */}
             <section className="relative bg-[#0a0a0a] py-20 border-t border-[#1a1a1a]">
-                <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
                     <div className="overflow-hidden">
                         <motion.h2
                             initial={{ y: "100%" }}
