@@ -434,7 +434,7 @@ export const siteData: SiteData = {
 
     contact: {
         email: "info@crawfordengineering.com",
-        phone: "+61 (0)4 00 000 000",
+        phone: "+61 450 850 587",
         office: "Level 1, Example Street, Brisbane QLD 4000",
     },
 };

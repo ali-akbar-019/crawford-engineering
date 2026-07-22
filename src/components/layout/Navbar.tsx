@@ -47,30 +47,21 @@ export default function Navbar() {
         `}
             >
                 <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
-                    <div className="flex items-center justify-between h-16 lg:h-20">
+                    <div className="flex items-center justify-between h-24 lg:h-32">
 
                         {/* ── Logo ── */}
-                        <Link to="/" className="flex items-center gap-3 group">
-                            {/* Lime square accent */}
-                            <motion.div
-                                className="w-2 h-8 bg-[#beff00]"
-                                whileHover={{ scaleY: 1.2 }}
+                        <Link
+                            to="/"
+                            className="flex items-center shrink-0"
+                            aria-label="Crawford Engineering — home"
+                        >
+                            <motion.img
+                                src="/images/logo.png"
+                                alt="Crawford Engineering"
+                                className="h-16 lg:h-24 w-auto object-contain"
+                                whileHover={{ scale: 1.04 }}
                                 transition={{ type: "spring", stiffness: 400 }}
                             />
-                            <div className="flex flex-col leading-none">
-                                <span
-                                    className="text-white text-xl lg:text-2xl tracking-wide"
-                                    style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-                                >
-                                    Crawford
-                                </span>
-                                <span
-                                    className="text-[#888] text-[10px] tracking-[0.2em] uppercase"
-                                    style={{ fontFamily: "'DM Mono', monospace" }}
-                                >
-                                    Engineering & Infrastructure
-                                </span>
-                            </div>
                         </Link>
 
                         {/* ── Desktop Nav ── */}
