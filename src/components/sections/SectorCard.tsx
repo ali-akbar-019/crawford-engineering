@@ -62,7 +62,7 @@ export default function SectorCard({ sector, index }: SectorCardProps) {
                         {sector.title}
                     </h3>
                     <p
-                        className="text-[#555] text-sm leading-relaxed"
+                        className="text-[#555] text-base lg:text-lg leading-relaxed"
                         style={{ fontFamily: "'DM Sans', sans-serif" }}
                     >
                         {sector.subtitle}
@@ -86,7 +86,7 @@ export default function SectorCard({ sector, index }: SectorCardProps) {
                             {/* Bullet */}
                             <span className="mt-[7px] w-1 h-1 bg-[#beff00] shrink-0 group-hover/item:scale-150 transition-transform duration-200" />
                             <span
-                                className="text-[#666] text-sm leading-relaxed group-hover/item:text-[#aaa] transition-colors duration-200"
+                                className="text-[#666] text-base lg:text-lg leading-relaxed group-hover/item:text-[#aaa] transition-colors duration-200"
                                 style={{ fontFamily: "'DM Sans', sans-serif" }}
                             >
                                 {item}

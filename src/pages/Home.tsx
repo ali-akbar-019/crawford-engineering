@@ -3,9 +3,13 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import Hero from "../components/sections/Hero";
 import { siteData } from "../data/content";
 import Capabilities from "@/components/sections/Capabilities";
+import UpdatedHero from "@/components/sections/UpdatedHero";
+import WhatWeDo from "@/components/sections/WhatWeDo";
+import FeaturedProjects from "@/components/sections/FeaturedProjects";
+import Testimonials from "@/components/sections/Testimonials";
+import { useDocumentTitle } from "@/utils/useDocumentTitle";
 
 // Page transition wrapper
 const pageVariants = {
@@ -24,6 +28,10 @@ const fadeUp = {
 };
 
 export default function Home() {
+    useDocumentTitle(
+        "Crawford Engineering & Infrastructure",
+        "Future-ready engineering for transport, urban infrastructure and specialist laboratory environments."
+    );
     return (
         <motion.div
             variants={pageVariants as any}
@@ -32,8 +40,10 @@ export default function Home() {
             exit="exit"
         >
             {/* ── Hero ── */}
-            <Hero />
+            <UpdatedHero />
 
+            {/* --what we do -- */}
+            <WhatWeDo />
             {/* ── Capabilities ── */}
             <Capabilities />
 
@@ -41,7 +51,7 @@ export default function Home() {
             <section className="relative bg-[#080808] py-24 overflow-hidden">
                 <div className="absolute inset-0 grid-bg opacity-50 pointer-events-none" />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
 
                     {/* Header row */}
                     <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
@@ -109,158 +119,57 @@ export default function Home() {
                                 whileInView="visible"
                                 viewport={{ once: true }}
                                 variants={fadeUp as any}
-                                className="group bg-[#080808] p-7 flex flex-col gap-4 hover:bg-[#0f0f0f] transition-colors duration-300 cursor-default"
                             >
-                                {/* Index */}
-                                <span
-                                    className="text-[#333] text-xs tracking-widest group-hover:text-[#beff00] transition-colors duration-300"
-                                    style={{ fontFamily: "'DM Mono', monospace" }}
+                                <Link
+                                    to={`/services/${service.id}`}
+                                    className="group block bg-[#080808] p-7 h-full flex flex-col gap-4 hover:bg-[#0f0f0f] transition-colors duration-300"
                                 >
-                                    0{i + 1}
-                                </span>
-
-                                <h3
-                                    className="text-white text-2xl leading-tight group-hover:text-[#beff00] transition-colors duration-300"
-                                    style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-                                >
-                                    {service.title}
-                                </h3>
-
-                                <p
-                                    className="text-[#555] text-sm leading-relaxed flex-1"
-                                    style={{ fontFamily: "'DM Sans', sans-serif" }}
-                                >
-                                    {service.description}
-                                </p>
-
-                                {/* Tags */}
-                                <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1a1a1a]">
-                                    {service.tags.map((tag) => (
-                                        <span
-                                            key={tag}
-                                            className="text-[10px] tracking-widest uppercase text-[#444] px-2 py-0.5 border border-[#1e1e1e]"
-                                            style={{ fontFamily: "'DM Mono', monospace" }}
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Projects Preview ── */}
-            <section className="relative bg-[#0a0a0a] py-24 overflow-hidden">
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-
-                    {/* Header */}
-                    <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
-                        <div>
-                            <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="flex items-center gap-3 mb-4"
-                            >
-                                <div className="w-8 h-[1px] bg-[#beff00]" />
-                                <span
-                                    className="text-[#beff00] text-xs tracking-[0.3em] uppercase"
-                                    style={{ fontFamily: "'DM Mono', monospace" }}
-                                >
-                                    Recent Work
-                                </span>
-                            </motion.div>
-                            <div className="overflow-hidden">
-                                <motion.h2
-                                    initial={{ y: "100%" }}
-                                    whileInView={{ y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                                    className="text-[clamp(2.5rem,5vw,4.5rem)] leading-none text-white"
-                                    style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-                                >
-                                    Representative Projects
-                                </motion.h2>
-                            </div>
-                        </div>
-
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.3 }}
-                        >
-                            <Link
-                                to="/projects"
-                                className="
-                  inline-flex items-center gap-2
-                  text-xs tracking-[0.2em] uppercase
-                  text-[#888] hover:text-[#beff00] transition-colors duration-200 group
-                "
-                                style={{ fontFamily: "'DM Sans', sans-serif" }}
-                            >
-                                View all projects
-                                <ArrowUpRight
-                                    size={13}
-                                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-                                />
-                            </Link>
-                        </motion.div>
-                    </div>
-
-                    {/* Projects list */}
-                    <div className="flex flex-col gap-0">
-                        {siteData.projects.map((project, i) => (
-                            <motion.div
-                                key={project.id}
-                                custom={i}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
-                                variants={fadeUp as any}
-                                className="group flex flex-col sm:flex-row sm:items-center justify-between gap-6 py-7 border-b border-[#1a1a1a] hover:border-[#beff00]/30 transition-colors duration-300"
-                            >
-                                <div className="flex items-start gap-6">
+                                    {/* Index */}
                                     <span
-                                        className="text-[#333] text-xs tracking-widest pt-1 shrink-0 group-hover:text-[#beff00] transition-colors"
+                                        className="text-[#333] text-xs tracking-widest group-hover:text-[#beff00] transition-colors duration-300"
                                         style={{ fontFamily: "'DM Mono', monospace" }}
                                     >
                                         0{i + 1}
                                     </span>
-                                    <div>
-                                        <h3
-                                            className="text-white text-2xl lg:text-3xl mb-1 group-hover:text-[#beff00] transition-colors duration-300"
-                                            style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-                                        >
-                                            {project.title}
-                                        </h3>
-                                        <p
-                                            className="text-[#555] text-sm"
-                                            style={{ fontFamily: "'DM Sans', sans-serif" }}
-                                        >
-                                            {project.description}
-                                        </p>
-                                    </div>
-                                </div>
 
-                                <div className="flex items-center gap-3 shrink-0 pl-10 sm:pl-0">
-                                    {project.tags.map((tag) => (
-                                        <span
-                                            key={tag}
-                                            className="text-[10px] tracking-widest uppercase text-[#444] px-2 py-0.5 border border-[#1e1e1e] group-hover:border-[#beff00]/30 transition-colors"
-                                            style={{ fontFamily: "'DM Mono', monospace" }}
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
+                                    <h3
+                                        className="text-white text-2xl leading-tight group-hover:text-[#beff00] transition-colors duration-300"
+                                        style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+                                    >
+                                        {service.title}
+                                    </h3>
+
+                                    <p
+                                        className="text-[#555] text-base lg:text-lg leading-relaxed flex-1"
+                                        style={{ fontFamily: "'DM Sans', sans-serif" }}
+                                    >
+                                        {service.description}
+                                    </p>
+
+                                    {/* Tags */}
+                                    <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1a1a1a]">
+                                        {service.tags.map((tag) => (
+                                            <span
+                                                key={tag}
+                                                className="text-[10px] tracking-widest uppercase text-[#444] px-2 py-0.5 border border-[#1e1e1e]"
+                                                style={{ fontFamily: "'DM Mono', monospace" }}
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </Link>
                             </motion.div>
                         ))}
                     </div>
                 </div>
             </section>
+
+            {/* ── Featured Projects Carousel ── */}
+            <FeaturedProjects />
+
+            {/* ── Testimonials ── */}
+            <Testimonials />
 
             {/* ── CTA Banner ── */}
             <section className="relative bg-[#beff00] py-20 overflow-hidden">
@@ -274,7 +183,7 @@ export default function Home() {
                     }}
                 />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+                <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
                     <div className="overflow-hidden">
                         <motion.h2
                             initial={{ y: "100%" }}
@@ -311,6 +220,19 @@ export default function Home() {
                             />
                         </Link>
                     </motion.div>
+                </div>
+            </section>
+
+            {/* ── Small closing strip ── */}
+            <section className="relative bg-[#0a0a0a] border-t border-[#1a1a1a] py-8">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16 flex items-center justify-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#beff00]" />
+                    <p
+                        className="text-[#666] text-sm text-center"
+                        style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    >
+                        Ready when you are. No pressure, just a conversation about what you need.
+                    </p>
                 </div>
             </section>
 

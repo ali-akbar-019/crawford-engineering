@@ -12,7 +12,7 @@ import {
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { siteData } from "../data/content";
-
+import { useDocumentTitle } from "../utils/useDocumentTitle";
 const pageVariants = {
     initial: { opacity: 0, y: 20 },
     enter: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
@@ -63,6 +63,10 @@ const MARQUEE_ITEMS = [
 ];
 
 export default function Contact() {
+    useDocumentTitle(
+        "Contact",
+        "Get in touch with Crawford Engineering & Infrastructure across Australia, Qatar and the UAE."
+    );
     const [form, setForm] = useState<FormState>(INITIAL_FORM);
     const [submitted, setSubmitted] = useState(false);
     const [focused, setFocused] = useState<string | null>(null);
@@ -98,7 +102,7 @@ export default function Contact() {
                 <div className="absolute inset-0 grid-bg opacity-60 pointer-events-none" />
                 <div className="absolute top-0 right-0 w-[500px] h-[400px] bg-[#beff00]/5 rounded-full blur-[130px] pointer-events-none" />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
 
                     {/* Breadcrumb */}
                     <motion.div
@@ -158,7 +162,7 @@ export default function Contact() {
 
             {/* ── Main content ── */}
             <section className="relative bg-[#0a0a0a] py-16">
-                <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 
                         {/* ── Left: contact info ── */}
@@ -169,7 +173,7 @@ export default function Contact() {
                                 initial="hidden"
                                 animate="visible"
                                 variants={fadeUp as any}
-                                className="text-[#666] text-sm leading-relaxed max-w-sm"
+                                className="text-[#666] text-base lg:text-xl leading-relaxed max-w-sm"
                                 style={{ fontFamily: "'DM Sans', sans-serif" }}
                             >
                                 To discuss an upcoming project or request a capability
@@ -192,12 +196,7 @@ export default function Contact() {
                                         value: siteData.contact.phone,
                                         href: `tel:${siteData.contact.phone}`,
                                     },
-                                    {
-                                        icon: <MapPin size={16} />,
-                                        label: "Office",
-                                        value: siteData.contact.office,
-                                        href: null,
-                                    },
+                                    // removed the location
                                 ].map((item, i) => (
                                     <motion.div
                                         key={item.label}
@@ -302,7 +301,7 @@ export default function Contact() {
                                                 Message received
                                             </h3>
                                             <p
-                                                className="text-[#555] text-sm leading-relaxed max-w-xs"
+                                                className="text-[#555] text-base lg:text-xl leading-relaxed max-w-xs"
                                                 style={{ fontFamily: "'DM Sans', sans-serif" }}
                                             >
                                                 Thank you for reaching out. We'll review your enquiry
@@ -506,6 +505,60 @@ export default function Contact() {
                                 )}
                             </AnimatePresence>
                         </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Global offices ── */}
+            <section className="relative bg-[#080808] border-t border-[#1a1a1a] py-20 overflow-hidden">
+                <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
+                <div className="relative z-10 max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="flex items-center gap-3 mb-12"
+                    >
+                        <div className="w-8 h-[1px] bg-[#beff00]" />
+                        <span
+                            className="text-[#beff00] text-xs tracking-[0.3em] uppercase"
+                            style={{ fontFamily: "'DM Mono', monospace" }}
+                        >
+                            Global Offices
+                        </span>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[#1a1a1a]">
+                        {siteData.offices.map((office, i) => (
+                            <motion.div
+                                key={office.id}
+                                custom={i}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                variants={fadeUp as any}
+                                className="group bg-[#0a0a0a] p-8 flex flex-col gap-3 hover:bg-[#0d0d0d] transition-colors duration-300"
+                            >
+                                <span
+                                    className="text-[#333] text-xs tracking-widest group-hover:text-[#beff00] transition-colors duration-300"
+                                    style={{ fontFamily: "'DM Mono', monospace" }}
+                                >
+                                    0{i + 1}
+                                </span>
+                                <h3
+                                    className="text-white text-3xl leading-none group-hover:text-[#beff00] transition-colors duration-300"
+                                    style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+                                >
+                                    {office.country}
+                                </h3>
+                                <p
+                                    className="text-[#666] text-base lg:text-xl leading-relaxed"
+                                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                                >
+                                    {office.address}
+                                </p>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>

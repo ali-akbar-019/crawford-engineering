@@ -11,17 +11,29 @@ export interface Service {
     id: string;
     title: string;
     description: string;
+    longDescription: string;
     tags: string[];
     category: ServiceCategory;
     icon: string; // Lucide icon name
+    image: string;
+    highlights: string[];
 }
+
+export type ProjectStatus = "in-progress" | "completed";
 
 export interface Project {
     id: string;
     title: string;
     description: string;
+    longDescription: string;
     tags: string[];
     sector: string;
+    status: ProjectStatus;
+    location: string;
+    image: string;
+    images: string[];
+    timeline: string[];
+    currentStage: number;
 }
 
 export interface Sector {
@@ -35,6 +47,39 @@ export interface Sector {
 export interface Capability {
     label: string;
     description: string;
+}
+
+export interface TeamMember {
+    id: string;
+    name: string;
+    role: string;
+    bio: string;
+    photo: string;
+    focalPoint?: string;
+    group: "founders" | "employees";
+}
+
+export interface Office {
+    id: string;
+    country: string;
+    address: string;
+}
+
+export interface JobOpening {
+    id: string;
+    title: string;
+    type: string;
+    location: string;
+    department: string;
+    description: string;
+}
+
+export interface Testimonial {
+    id: string;
+    quote: string;
+    author: string;
+    role: string;
+    company: string;
 }
 
 export interface ContactInfo {
@@ -52,5 +97,9 @@ export interface SiteData {
     services: Service[];
     projects: Project[];
     sectors: Sector[];
+    team: TeamMember[];
+    offices: Office[];
+    jobOpenings: JobOpening[];
+    testimonials: Testimonial[];
     contact: ContactInfo;
 }
