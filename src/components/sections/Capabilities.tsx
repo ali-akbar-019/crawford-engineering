@@ -90,22 +90,6 @@ export default function Capabilities() {
                                     </p>
                                 </div>
 
-                                {/* Arrow indicator */}
-                                <div className="w-5 h-5 border border-[#333] group-hover:border-[#beff00] group-hover:bg-[#beff00] transition-all duration-300 flex items-center justify-center shrink-0 mt-1">
-                                    <svg
-                                        width="8"
-                                        height="8"
-                                        viewBox="0 0 8 8"
-                                        className="text-[#333] group-hover:text-[#0a0a0a] transition-colors duration-300"
-                                    >
-                                        <path
-                                            d="M1 7L7 1M7 1H2M7 1V6"
-                                            stroke="currentColor"
-                                            strokeWidth="1.2"
-                                            fill="none"
-                                        />
-                                    </svg>
-                                </div>
                             </motion.div>
                         ))}
                     </div>

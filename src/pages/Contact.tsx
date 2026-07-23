@@ -557,6 +557,14 @@ export default function Contact() {
                                 >
                                     {office.address}
                                 </p>
+                                <a
+                                    href={`tel:${office.phone}`}
+                                    className="inline-flex items-center gap-2 text-[#aaa] text-sm hover:text-[#beff00] transition-colors duration-200 mt-1"
+                                    style={{ fontFamily: "'DM Mono', monospace" }}
+                                >
+                                    <Phone size={13} className="text-[#beff00]" />
+                                    {office.phone}
+                                </a>
                             </motion.div>
                         ))}
                     </div>

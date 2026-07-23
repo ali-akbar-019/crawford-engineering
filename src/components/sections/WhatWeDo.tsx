@@ -13,7 +13,7 @@ const WHAT_WE_DO = [
         description:
             "Geometric design, corridor upgrades and intersection layouts engineered for safety and capacity.",
         poster:
-            "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=800&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1721592626360-9b63b6a17ae8?q=80&w=800&auto=format&fit=crop",
         videoSrc: "",
     },
     {
@@ -21,7 +21,7 @@ const WHAT_WE_DO = [
         description:
             "Lifecycle planning and condition assessments that keep infrastructure assets performing and accountable.",
         poster:
-            "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1517089152318-42ec560349c0?q=80&w=800&auto=format&fit=crop",
         videoSrc: "",
     },
     {
@@ -29,7 +29,7 @@ const WHAT_WE_DO = [
         description:
             "Signal timing, control interfaces and traffic modelling that keep networks moving safely.",
         poster:
-            "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=800&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1644354821516-fea26e2bda92?q=80&w=800&auto=format&fit=crop",
         videoSrc: "",
     },
 
@@ -138,11 +138,6 @@ const WhatWeDo = () => {
                                     >
                                         {item.description}
                                     </p>
-                                    <div className="pt-1">
-                                        <span className="inline-flex items-center justify-center w-8 h-8 border border-[#222] text-[#333] group-hover:border-[#beff00] group-hover:bg-[#beff00] group-hover:text-[#0a0a0a] transition-all duration-300">
-                                            <ArrowRight size={13} />
-                                        </span>
-                                    </div>
                                 </div>
                             </motion.div>
                         ))}

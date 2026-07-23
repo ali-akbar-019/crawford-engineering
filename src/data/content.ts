@@ -362,16 +362,19 @@ export const siteData: SiteData = {
             id: "australia",
             country: "Australia",
             address: "Level 1, Example Street, Brisbane QLD 4000",
+            phone: "+61 450 850 587",
         },
         {
             id: "qatar",
             country: "Qatar",
             address: "West Bay, Doha, Qatar",
+            phone: "+974 6672 7412",
         },
         {
             id: "dubai",
             country: "United Arab Emirates",
             address: "Business Bay, Dubai, UAE",
+            phone: "+971 54 703 2293",
         },
     ],
 

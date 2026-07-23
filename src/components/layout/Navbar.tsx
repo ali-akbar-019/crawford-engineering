@@ -47,7 +47,7 @@ export default function Navbar() {
         `}
             >
                 <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16">
-                    <div className="flex items-center justify-between h-24 lg:h-32">
+                    <div className="flex items-center justify-between h-20 lg:h-24">
 
                         {/* ── Logo ── */}
                         <Link
@@ -58,7 +58,7 @@ export default function Navbar() {
                             <motion.img
                                 src="/images/logo.png"
                                 alt="Crawford Engineering"
-                                className="h-16 lg:h-24 w-auto object-contain"
+                                className="h-9 lg:h-12 w-auto object-contain"
                                 whileHover={{ scale: 1.04 }}
                                 transition={{ type: "spring", stiffness: 400 }}
                             />

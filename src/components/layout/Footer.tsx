@@ -171,24 +171,26 @@ export default function Footer() {
                                 </a>
                             </li>
 
-                            <li>
-                                <a
-                                    href={`tel:${siteData.contact.phone}`}
-                                    className="group flex items-start gap-3 text-[#888] hover:text-white transition-colors duration-200"
-                                >
-                                    <Phone
-                                        size={14}
-                                        className="mt-0.5 shrink-0 text-[#beff00]"
-                                    />
-                                    <span
-                                        className="text-sm"
-                                        style={{ fontFamily: "'DM Sans', sans-serif" }}
+                            {siteData.offices.map((office) => (
+                                <li key={office.id}>
+                                    <a
+                                        href={`tel:${office.phone}`}
+                                        className="group flex items-start gap-3 text-[#888] hover:text-white transition-colors duration-200"
                                     >
-                                        {siteData.contact.phone}
-                                    </span>
-                                </a>
-                            </li>
-
+                                        <Phone
+                                            size={14}
+                                            className="mt-0.5 shrink-0 text-[#beff00]"
+                                        />
+                                        <span
+                                            className="text-sm"
+                                            style={{ fontFamily: "'DM Sans', sans-serif" }}
+                                        >
+                                            {office.phone}
+                                            <span className="text-[#555]"> — {office.id === "dubai" ? "UAE" : office.id === "qatar" ? "QAR" : "AUS"}</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            ))}
 
                         </ul>
 

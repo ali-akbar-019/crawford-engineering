@@ -63,6 +63,7 @@ export interface Office {
     id: string;
     country: string;
     address: string;
+    phone: string;
 }
 
 export interface JobOpening {

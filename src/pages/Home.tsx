@@ -224,15 +224,19 @@ export default function Home() {
             </section>
 
             {/* ── Small closing strip ── */}
-            <section className="relative bg-[#0a0a0a] border-t border-[#1a1a1a] py-8">
-                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16 flex items-center justify-center gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#beff00]" />
-                    <p
-                        className="text-[#666] text-sm text-center"
-                        style={{ fontFamily: "'DM Sans', sans-serif" }}
+            <section className="relative bg-[#0a0a0a] border-t border-[#1a1a1a] py-12">
+                <div className="max-w-[1680px] mx-auto px-6 lg:px-10 2xl:px-16 flex items-center justify-center gap-4">
+                    <span className="w-2 h-2 rounded-full bg-[#beff00] animate-pulse shrink-0" />
+                    <motion.p
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                        className="text-white text-xl lg:text-3xl tracking-wide text-center"
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}
                     >
-                        Ready when you are. No pressure, just a conversation about what you need.
-                    </p>
+                        Ready when you are.
+                    </motion.p>
                 </div>
             </section>
 
